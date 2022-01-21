@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Vector2 = System.Numerics.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
@@ -22,6 +23,11 @@ public class CameraController : MonoBehaviour
     }
     void Update()
     {
+        //for testing - takes to game over screen
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            SceneManager.LoadScene(2);
+        }
         //panning camera with WASD/Arrows
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
