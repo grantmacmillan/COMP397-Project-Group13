@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float movementSpeed = 5f;
+    public float rotationSpeed = 5f;
 
     private Transform target;
     private int currentWaypointIndex = 0;
@@ -31,9 +32,14 @@ public class EnemyMovement : MonoBehaviour
     {
         currentWaypointIndex++;
         target = WaypointList.waypoints[currentWaypointIndex];
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = lookRotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+
+        transform.LookAt(target);
+        transform.LookAt(target, Vector3.forward);
+
+        //Vector3 dir = target.position - transform.position;
+        //Quaternion lookRotation = Quaternion.LookRotation(dir);
+        //Vector3 rotation = lookRotation.eulerAngles;
+        //transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 }
