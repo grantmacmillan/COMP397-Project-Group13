@@ -8,9 +8,9 @@ public class Projectile : MonoBehaviour
 
     public float speed = 1f;
 
-    public void SetTarget(Transform target)
+    public void SetTarget(Transform _target)
     {
-        target = this.target;
+        target = _target;
     }
     void Update()
     {
@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
             return;
         }
 
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = (target.position + new Vector3(0, 0.6f, 0)) - transform.position;
 
         float distance = speed * Time.deltaTime;
 
@@ -34,6 +34,6 @@ public class Projectile : MonoBehaviour
 
     void HitTarget()
     {
-        Destroy(gameObject);
+       Destroy(gameObject);
     }
 }

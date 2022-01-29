@@ -51,7 +51,6 @@ public class Turret : MonoBehaviour
 
     private void Fire()
     {
-        Debug.Log("fired");
         GameObject cannonball = (GameObject)Instantiate(cannonBallPrefab, firePoint.position, firePoint.rotation);
 
         Projectile projectile = cannonball.GetComponent<Projectile>();
