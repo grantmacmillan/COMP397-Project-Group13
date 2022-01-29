@@ -6054,7 +6054,12 @@ MonoBehaviour:
   enemyPrefab: {fileID: 2874178210959718078, guid: c872650904e3664429bec0bb435b4ead,
     type: 3}
   spawnPoint: {fileID: 359455785}
+  enemies:
+  - {fileID: 3218087424204450820, guid: c872650904e3664429bec0bb435b4ead, type: 3}
+  - {fileID: 3370351173604324190, guid: f5ebb52062954c740b7f34855705977b, type: 3}
+  - {fileID: 1090689776012894063, guid: fdb1c6051cf1d664fbc1e37af53520f2, type: 3}
   waveTimer: 5
+  enemySpawnGapTime: 0.3
 --- !u!1001 &364601915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18803,7 +18808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1084783579
 Transform:
   m_ObjectHideFlags: 0
@@ -22227,6 +22232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Test Monster
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218087424204450820, guid: c872650904e3664429bec0bb435b4ead,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c872650904e3664429bec0bb435b4ead, type: 3}
@@ -34913,7 +34923,7 @@ PrefabInstance:
     - target: {fileID: 1090689776012894063, guid: fdb1c6051cf1d664fbc1e37af53520f2,
         type: 3}
       propertyPath: m_Name
-      value: Orc_Wolfrider
+      value: Wolfrider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb1c6051cf1d664fbc1e37af53520f2, type: 3}

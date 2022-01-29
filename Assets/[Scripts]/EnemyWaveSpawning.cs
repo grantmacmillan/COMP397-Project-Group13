@@ -6,35 +6,39 @@ public class EnemyWaveSpawning : MonoBehaviour
 {
     public Transform enemyPrefab;
     public Transform spawnPoint;
+    public GameObject[] enemies;
+    //int randomEnemyIndex = Random.Range(0, enemies.Length);
 
     public float waveTimer = 5f;
+    public float enemySpawnGapTime;
     private float countdown = 2f;
 
-
-    private int waveNum = 1;
+    private int waveNum = 0;
 
     void Update()
     {
         if (countdown <= 0f)
         {
-            SpawnWave();
+            StartCoroutine(SpawnWave());
             countdown = waveTimer;
         }
 
         countdown -= Time.deltaTime;
     }
 
-    void SpawnWave()
+    IEnumerator SpawnWave()
     {
+        waveNum++;
         for (int i = 0; i < waveNum; i++)
         {
             SpawnEnemy();
+            yield return new WaitForSeconds(enemySpawnGapTime);
         }
-        waveNum++;
+        
     }
 
     void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemies[Random.Range(0,enemies.Length)], spawnPoint.position, spawnPoint.rotation);
     }
 }
