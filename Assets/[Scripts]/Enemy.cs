@@ -35,9 +35,19 @@ public class Enemy : MonoBehaviour
     void GetNextWaypointFromIndex()
     {
         currentWaypointIndex++;
-        target = WaypointList.waypoints[currentWaypointIndex];
+        if (currentWaypointIndex > WaypointList.waypoints.Length)
+        {
+            KillEnemy();
+        }
+
+            target = WaypointList.waypoints[currentWaypointIndex];
 
         Vector3 dir = target.position - transform.position;
         lookRotation = Quaternion.LookRotation(dir);
+    }
+
+    void KillEnemy()
+    {
+        Destroy(gameObject);
     }
 }
