@@ -14128,7 +14128,7 @@ PrefabInstance:
     - target: {fileID: 2874178210959718078, guid: c872650904e3664429bec0bb435b4ead,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2874178210959718078, guid: c872650904e3664429bec0bb435b4ead,
         type: 3}
@@ -14138,7 +14138,7 @@ PrefabInstance:
     - target: {fileID: 2874178210959718078, guid: c872650904e3664429bec0bb435b4ead,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2874178210959718078, guid: c872650904e3664429bec0bb435b4ead,
         type: 3}
@@ -14153,7 +14153,7 @@ PrefabInstance:
     - target: {fileID: 2874178210959718078, guid: c872650904e3664429bec0bb435b4ead,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2874178210959718078, guid: c872650904e3664429bec0bb435b4ead,
         type: 3}
@@ -15028,7 +15028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 63.107544, y: -47.107666}
+  m_AnchoredPosition: {x: 63.107666, y: -47.107666}
   m_SizeDelta: {x: 431.7848, y: 431.7848}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &858708406
@@ -19318,7 +19318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
-  rotationSpeed: 50
+  rotationSpeed: 5
 --- !u!1001 &1101853643
 PrefabInstance:
   m_ObjectHideFlags: 0
