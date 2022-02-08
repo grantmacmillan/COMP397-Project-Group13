@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -14,7 +15,10 @@ public class Enemy : MonoBehaviour
 
     public float movementSpeed = 5f;
     public float rotationSpeed = 5f;
+    public float health;
+    public Image healthBar;
 
+    private float startHealth;
     private State state;
     private Animator animator;
     private Quaternion lookRotation;
@@ -23,6 +27,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        startHealth = health;
         state = State.Walk;
         animator = GetComponent<Animator>();
         target = WaypointList.waypoints[0];
@@ -69,10 +74,22 @@ public class Enemy : MonoBehaviour
             KillEnemy();
         }
 
-            target = WaypointList.waypoints[currentWaypointIndex];
+        target = WaypointList.waypoints[currentWaypointIndex];
 
         Vector3 dir = target.position - transform.position;
         lookRotation = Quaternion.LookRotation(dir);
+    }
+
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+
+        healthBar.fillAmount = health / startHealth;
+
+        if (health <= 0)
+        {
+            KillEnemy();
+        }
     }
 
     void KillEnemy()

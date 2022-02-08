@@ -1893,6 +1893,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2
   rotationSpeed: 5
+  health: 75
+  healthBar: {fileID: 5070528728414057362}
 --- !u!1 &1090689776963569888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,6 +2111,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 306668ccf8821a04bb05bbea5d9fefac, type: 3}
+--- !u!114 &5070528728414057362 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5275199869304247773, guid: 306668ccf8821a04bb05bbea5d9fefac,
+    type: 3}
+  m_PrefabInstance: {fileID: 1111093159453615695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5070528729327219430 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,

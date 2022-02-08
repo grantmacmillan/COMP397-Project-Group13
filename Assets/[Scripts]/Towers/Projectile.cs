@@ -34,6 +34,7 @@ public class Projectile : MonoBehaviour
 
     void HitTarget()
     {
-       Destroy(gameObject);
+        target.GetComponent<Enemy>().TakeDamage(25f);
+        Destroy(gameObject);
     }
 }
