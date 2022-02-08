@@ -22,10 +22,10 @@ public class PausedMenu : MonoBehaviour
         }
     }
 
-    void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        Tikme.timeScale = 1f;
+        Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
@@ -35,4 +35,18 @@ public class PausedMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
+
+    public void LoadMenu(){
+        //SceneManager.LoadScene("Menu");
+    }
+
+
+    public void SaveMenu(){
+        
+    }
+
+    public void ExitGame(){
+        Application.Quit();
+    }
+
 }
