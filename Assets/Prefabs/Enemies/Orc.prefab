@@ -1834,7 +1834,7 @@ GameObject:
   - component: {fileID: 1090689776022416643}
   - component: {fileID: 5859654726583268749}
   m_Layer: 0
-  m_Name: WolfRider
+  m_Name: Orc
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

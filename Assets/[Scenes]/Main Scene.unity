@@ -22156,6 +22156,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4075845076092935643, guid: c872650904e3664429bec0bb435b4ead,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c872650904e3664429bec0bb435b4ead, type: 3}
 --- !u!1 &1283762047
@@ -28572,12 +28577,14 @@ MonoBehaviour:
   enemyPrefab: {fileID: 2874178210959718078, guid: c872650904e3664429bec0bb435b4ead,
     type: 3}
   spawnPoint: {fileID: 359455785}
-  enemies:
-  - {fileID: 3218087424204450820, guid: c872650904e3664429bec0bb435b4ead, type: 3}
+  enemiesToSpawn:
   - {fileID: 3370351173604324190, guid: f5ebb52062954c740b7f34855705977b, type: 3}
   - {fileID: 1090689776012894063, guid: fdb1c6051cf1d664fbc1e37af53520f2, type: 3}
+  - {fileID: 3218087424204450820, guid: c872650904e3664429bec0bb435b4ead, type: 3}
+  enemiesAlive: []
+  waves: []
   waveTimer: 5
-  enemySpawnGapTime: 0.3
+  enemySpawnGapTime: 0.8
 --- !u!1001 &1699794917
 PrefabInstance:
   m_ObjectHideFlags: 0
