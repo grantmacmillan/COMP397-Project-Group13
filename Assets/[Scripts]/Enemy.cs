@@ -49,20 +49,23 @@ public class Enemy : MonoBehaviour
                 animator.SetFloat("movementSpeed", movementSpeed*2);
                 break;
             case State.Dead:
-                animator.SetBool("isDead", true);
+                gameObject.tag = "Dead";
                 break;
 
-        } 
+        }
 
-        Vector3 direction = target.position - transform.position;
-        transform.Translate(direction.normalized * movementSpeed * Time.deltaTime, Space.World);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
-
-        float distance = Vector3.Distance(target.position, transform.position);
-        if (distance < 0.05)
+        if (state == State.Walk)
         {
-            
-            GetNextWaypointFromIndex();
+            Vector3 direction = target.position - transform.position;
+            transform.Translate(direction.normalized * movementSpeed * Time.deltaTime, Space.World);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+
+            float distance = Vector3.Distance(target.position, transform.position);
+            if (distance < 0.05)
+            {
+
+                GetNextWaypointFromIndex();
+            }
         }
     }
 
@@ -88,12 +91,15 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            KillEnemy();
+            StartCoroutine(KillEnemy());
         }
     }
 
-    void KillEnemy()
+    IEnumerator KillEnemy()
     {
+        state = State.Dead;
+        animator.SetTrigger("Dead");
+        yield return new WaitForSeconds(4f); 
         Destroy(gameObject);
     }
 }
