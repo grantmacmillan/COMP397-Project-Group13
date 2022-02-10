@@ -35243,6 +35243,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
+        type: 3}
+      propertyPath: sounds.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7efa1be8e289ec94eb1eff48a80bba4d, type: 3}
+    - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
+        type: 3}
+      propertyPath: sounds.Array.data[5].name
+      value: CannonFire
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.444
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
+        type: 3}
+      propertyPath: sounds.Array.data[5].volume
+      value: 0.182
+      objectReference: {fileID: 0}
     - target: {fileID: 7642915804131981619, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
       propertyPath: m_Name

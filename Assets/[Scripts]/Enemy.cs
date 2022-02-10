@@ -97,6 +97,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator KillEnemy()
     {
+        FindObjectOfType<Sound_Manager>().Play("MonsterDeath1");
         state = State.Dead;
         animator.SetTrigger("Dead");
         yield return new WaitForSeconds(4f); 
