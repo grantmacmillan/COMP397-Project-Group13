@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour
         currentWaypointIndex++;
         if (currentWaypointIndex > WaypointList.waypoints.Length)
         {
-            KillEnemy();
+            DestoryEnemy();
         }
 
         target = WaypointList.waypoints[currentWaypointIndex];
@@ -101,6 +101,12 @@ public class Enemy : MonoBehaviour
         state = State.Dead;
         animator.SetTrigger("Dead");
         yield return new WaitForSeconds(4f); 
+        Destroy(gameObject);
+    }
+
+    public void DestoryEnemy()
+    {
+        FindObjectOfType<Sound_Manager>().Play("LosingLife");
         Destroy(gameObject);
     }
 }
