@@ -12,12 +12,13 @@ public class BuildManager : MonoBehaviour
     {
         instance = this;
     }
-    private void Start()
-    {
-        turretToBuild = turrets[0];
-    }
     public GameObject GetTurretToBuild()
     {
         return turretToBuild;
+    }
+
+    public void SetTurretToBuild(GameObject turret)
+    {
+        turretToBuild = turret;
     }
 }

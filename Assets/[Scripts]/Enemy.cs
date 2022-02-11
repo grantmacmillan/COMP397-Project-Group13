@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour
         currentWaypointIndex++;
         if (currentWaypointIndex > WaypointList.waypoints.Length)
         {
-            KillEnemy();
+            StartCoroutine(KillEnemy());
         }
 
         target = WaypointList.waypoints[currentWaypointIndex];
