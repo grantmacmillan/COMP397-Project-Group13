@@ -74,11 +74,7 @@ public class Enemy : MonoBehaviour
         currentWaypointIndex++;
         if (currentWaypointIndex > WaypointList.waypoints.Length)
         {
-<<<<<<< HEAD
-            StartCoroutine(KillEnemy());
-=======
-            DestoryEnemy();
->>>>>>> main
+            DestroyEnemy();
         }
 
         target = WaypointList.waypoints[currentWaypointIndex];
@@ -99,7 +95,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    IEnumerator KillEnemy()
+    private IEnumerator KillEnemy()
     {
         FindObjectOfType<Sound_Manager>().Play("MonsterDeath1");
         state = State.Dead;
@@ -108,7 +104,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void DestoryEnemy()
+    public void DestroyEnemy()
     {
         FindObjectOfType<Sound_Manager>().Play("LosingLife");
         Destroy(gameObject);
