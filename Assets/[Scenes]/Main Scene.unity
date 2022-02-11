@@ -35711,17 +35711,17 @@ PrefabInstance:
     - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
       propertyPath: sounds.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
       propertyPath: sounds.Array.data[5].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 7efa1be8e289ec94eb1eff48a80bba4d, type: 3}
+      objectReference: {fileID: 8300000, guid: 664e59baa3afec648865ee5482ae9d46, type: 3}
     - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
       propertyPath: sounds.Array.data[5].name
-      value: CannonFire
+      value: LosingLife
       objectReference: {fileID: 0}
     - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
