@@ -1,11 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-[CreateAssetMenu]
 [System.Serializable]
-
-public class Wave : ScriptableObject
+public class Wave
 {
     public int skeleton;
     public int orc;

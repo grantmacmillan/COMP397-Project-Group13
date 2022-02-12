@@ -13,9 +13,7 @@ public class EnemyWaveSpawning : MonoBehaviour
     public List<Wave> waves = new List<Wave>();
     //int randomEnemyIndex = Random.Range(0, enemies.Length);
 
-    public float waveTimer = 5f;
     public float enemySpawnGapTime;
-    private float countdown = 2f;
 
     private int waveNum = 0;
 
@@ -30,7 +28,6 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     void Update()
     {
-
         foreach (GameObject enemy in enemiesAlive)
         {
             if (enemy == null)
@@ -42,21 +39,17 @@ public class EnemyWaveSpawning : MonoBehaviour
         if (enemiesAlive.Count == 0)
         {
             waveNum++;
-            if(waveNum < waves.Count)
+            if (waveNum < waves.Count)
             {
                 //else win game
                 StartCoroutine(SpawnWave(waves[waveNum]));
             }
-            
         }
 
-        
     }
 
     IEnumerator SpawnWave(Wave wave)
     {
-       
-        
         for (int i = 0; i < wave.skeleton; i++)
         {
             SpawnEnemy(0);
@@ -72,7 +65,6 @@ public class EnemyWaveSpawning : MonoBehaviour
             SpawnEnemy(2);
             yield return new WaitForSeconds(enemySpawnGapTime);
         }
-
     }
 
     void SpawnEnemy(int enemy)
