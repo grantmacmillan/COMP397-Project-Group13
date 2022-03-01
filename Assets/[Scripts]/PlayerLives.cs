@@ -17,8 +17,9 @@ public class PlayerLives : MonoBehaviour
     {
         currentLives = maxLives;
         livesText = GetComponent<TextMeshProUGUI>();
-        livesText.text = "C";
-        Debug.Log(currentLives);
+        //livesText.text = "C";
+        //Debug.Log(currentLives);
+        livesText.text = currentLives.ToString();
     }
 
     private void Update()
@@ -28,9 +29,9 @@ public class PlayerLives : MonoBehaviour
 
     public void LoseLife(int lives)
     {
-        Debug.Log("lost a life");
+        //Debug.Log("lost a life");
         currentLives--;
-        Debug.Log(currentLives);
+        //Debug.Log(currentLives);
         livesText.text = currentLives.ToString();
 
         //change UI

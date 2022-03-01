@@ -19,10 +19,20 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     private void Start()
     {
-
-        waves.Add(new Wave(1,0,0));
+        // skeletons, orcs, vampires
+        waves.Add(new Wave(1, 0, 0));
         waves.Add(new Wave(1, 1, 0));
-        waves.Add(new Wave(1, 1, 1));
+        waves.Add(new Wave(2, 1, 1));
+        waves.Add(new Wave(2, 2, 1));
+        waves.Add(new Wave(2, 2, 2));
+        waves.Add(new Wave(3, 2, 2));
+        waves.Add(new Wave(3, 3, 2));
+        waves.Add(new Wave(3, 3, 3));
+        waves.Add(new Wave(4, 4, 4));
+        waves.Add(new Wave(5, 5, 5));
+        waves.Add(new Wave(6, 6, 6));
+        waves.Add(new Wave(7, 7, 7));
+        waves.Add(new Wave(8, 8, 8));
         StartCoroutine(SpawnWave(waves[0]));
     }
 
