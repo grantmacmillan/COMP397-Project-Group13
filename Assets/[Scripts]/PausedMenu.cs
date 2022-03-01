@@ -47,7 +47,7 @@ public class PausedMenu : MonoBehaviour
     }
 
     public void ExitToMainMenu(){
-        SceneManager.LoadScene("Load Menu");
+        SceneManager.LoadScene("Main Menu");
     }
 
 }
