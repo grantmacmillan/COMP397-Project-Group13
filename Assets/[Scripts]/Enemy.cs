@@ -25,6 +25,9 @@ public class Enemy : MonoBehaviour
     private Transform target;
     private int currentWaypointIndex = 0;
 
+    public int lives = 5;
+    PlayerLives instance = new();
+
     private void Start()
     {
         startHealth = health;
@@ -75,6 +78,11 @@ public class Enemy : MonoBehaviour
         if (currentWaypointIndex > WaypointList.waypoints.Length)
         {
             DestroyEnemy();
+            //put remove life code here
+            //PlayerLives.LoseLife(1);
+            
+            //instance.LoseLife();
+            Debug.Log("this is where u lose a life");
         }
 
         target = WaypointList.waypoints[currentWaypointIndex];
@@ -106,7 +114,11 @@ public class Enemy : MonoBehaviour
 
     public void DestroyEnemy()
     {
+        lives--;
+        FindObjectOfType<PlayerLives>().LoseLife(lives);
         FindObjectOfType<Sound_Manager>().Play("LosingLife");
         Destroy(gameObject);
     }
+
+
 }
