@@ -9,7 +9,7 @@ public class PlayerLives : MonoBehaviour
     // Start is called before the first frame update
 
     public int maxLives = 5;
-    int currentLives;
+     int currentLives;
 
     public TextMeshProUGUI livesText;
 
@@ -45,5 +45,10 @@ public class PlayerLives : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene("Game Over");
+    }
+
+    public int getCurrentLives()
+    {
+       return currentLives;
     }
 }

@@ -17376,7 +17376,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -49.720924}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -22880,6 +22880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1430543851}
+  gobj: {fileID: 973922959}
 --- !u!1001 &1285985534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30026,6 +30027,7 @@ GameObject:
   - component: {fileID: 1696829117}
   - component: {fileID: 1696829116}
   - component: {fileID: 1696829118}
+  - component: {fileID: 1696829119}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -30084,6 +30086,20 @@ MonoBehaviour:
   enemiesAlive: []
   waves: []
   enemySpawnGapTime: 0.8
+--- !u!114 &1696829119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696829115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a62626e76b69c541b14bcc3fb7accbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gobj: {fileID: 973922959}
+  lives: 0
 --- !u!1001 &1699794917
 PrefabInstance:
   m_ObjectHideFlags: 0
