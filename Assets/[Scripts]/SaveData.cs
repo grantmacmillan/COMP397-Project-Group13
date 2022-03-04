@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SaveData:MonoBehaviour 
 {
     [SerializeField]
-    private GameObject gobj;
+    private GameObject life;
+    [SerializeField]
+    private GameObject wood;
     public int lives;
+    public string woods;
+    
 
-    public SaveData(GameObject gobj)
+
+public SaveData(GameObject life, GameObject wood)
     {
-        lives = gobj.GetComponent<PlayerLives>().getCurrentLives();
-        
+        lives = life.GetComponentInChildren<PlayerLives>().getCurrentLives();
+
+        //temporary access the text field. Needs to be replaced by actual data from the script
+        woods = wood.GetComponent<TextMeshProUGUI>().text;        
     }
 }
