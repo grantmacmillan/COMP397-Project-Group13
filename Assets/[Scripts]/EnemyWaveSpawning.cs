@@ -39,6 +39,7 @@ public class EnemyWaveSpawning : MonoBehaviour
         waves.Add(new Wave(20, 5, 1));
         waves.Add(new Wave(25, 7, 2));
         waves.Add(new Wave(30, 8, 3));
+        waves.Add(new Wave(30, 8, 3));
         ResourceManager.totalWaves = waves.Count;
         
 
@@ -66,7 +67,7 @@ public class EnemyWaveSpawning : MonoBehaviour
                 StartCoroutine(SpawnWave(waves[waveNum]));
             }else
             {
-                SceneManager.LoadScene("Game Over");
+                SceneManager.LoadScene("Game Won");
             }
         }
 
