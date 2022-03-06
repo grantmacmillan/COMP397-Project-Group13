@@ -50650,8 +50650,8 @@ MonoBehaviour:
   goldText: {fileID: 910426908}
   woodText: {fileID: 1821335771}
   gemsText: {fileID: 1812520546}
-  waveText: {fileID: 44403173}
-  startingGold: 15
+  waveText: {fileID: 0}
+  startingGold: 25
   startingWood: 0
   startingGems: 0
 --- !u!1 &1698938382
