@@ -10,15 +10,15 @@ public class SaveData:MonoBehaviour
     [SerializeField]
     private GameObject wood;
     public int lives;
-    public string woods;
+    public int woods,gold, gems;
     
 
 
-public SaveData(GameObject life, GameObject wood)
+public SaveData(GameObject life)
     {
         lives = life.GetComponentInChildren<PlayerLives>().getCurrentLives();
-
-        //temporary access the text field. Needs to be replaced by actual data from the script
-        woods = wood.GetComponent<TextMeshProUGUI>().text;        
+        woods = ResourceManager.wood;
+        gold = ResourceManager.gold;
+        gems = ResourceManager.gems;
     }
 }

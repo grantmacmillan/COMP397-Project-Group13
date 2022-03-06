@@ -9,7 +9,7 @@ public class PausedMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
     [SerializeField]
-    private GameObject life,wood;
+    private GameObject life;
 
     void Update()
     {
@@ -46,7 +46,7 @@ public class PausedMenu : MonoBehaviour
 
 
     public void SaveMenu(){
-        SaveSystem.SaveData(life,wood);
+        SaveSystem.SaveData(life);
     }
 
     public void ExitToMainMenu(){
