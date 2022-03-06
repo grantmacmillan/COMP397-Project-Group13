@@ -34,9 +34,14 @@ public class Node : MonoBehaviour
                 return;
             }
 
-            GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-            turret = (GameObject) Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
-            buildManager.SetTurretToBuild(null);
+            Tower tower = BuildManager.instance.GetTurretToBuild();
+            if (ResourceManager.Purchase(tower.gold, tower.wood, tower.gem))
+            {
+                GameObject turretToBuild = tower.towerPrefab;
+                turret = (GameObject) Instantiate(turretToBuild, transform.position + positionOffset,
+                    transform.rotation);
+                buildManager.SetTurretToBuild(null);
+            }
         }
     }
     private void OnMouseEnter()

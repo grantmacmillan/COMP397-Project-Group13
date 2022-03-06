@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
     private int currentWaypointIndex = 0;
 
     public int lives = 5;
+    public int goldAmount;
     PlayerLives instance = new();
 
     private void Start()
@@ -105,6 +106,7 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator KillEnemy()
     {
+        ResourceManager.gold += goldAmount;
         FindObjectOfType<Sound_Manager>().Play("MonsterDeath1");
         state = State.Dead;
         animator.SetTrigger("Dead");

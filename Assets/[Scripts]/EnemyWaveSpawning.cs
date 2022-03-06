@@ -15,6 +15,8 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     public float enemySpawnGapTime;
 
+    public int waveCompletedGold = 5;
+
     private int waveNum = 0;
 
     private void Start()
@@ -48,6 +50,7 @@ public class EnemyWaveSpawning : MonoBehaviour
 
         if (enemiesAlive.Count == 0)
         {
+            ResourceManager.gold += waveCompletedGold;
             waveNum++;
             if (waveNum < waves.Count)
             {

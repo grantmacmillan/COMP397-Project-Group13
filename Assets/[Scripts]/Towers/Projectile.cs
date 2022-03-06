@@ -1,4 +1,3 @@
-using System.Numerics;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
@@ -21,7 +20,6 @@ public class Projectile : MonoBehaviour
         }
 
         Vector3 dir = (target.position + new Vector3(0, 0.6f, 0)) - transform.position;
-
         float distance = speed * Time.deltaTime;
 
         if (dir.magnitude <= distance)

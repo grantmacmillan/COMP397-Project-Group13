@@ -5,19 +5,19 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance; 
-    private GameObject turretToBuild;
-    public List<GameObject> turrets = new List<GameObject>();
+    private Tower turretToBuild;
+    public List<Tower> turrets = new List<Tower>();
 
     private void Awake()
     {
         instance = this;
     }
-    public GameObject GetTurretToBuild()
+    public Tower GetTurretToBuild()
     {
         return turretToBuild;
     }
 
-    public void SetTurretToBuild(GameObject turret)
+    public void SetTurretToBuild(Tower turret)
     {
         turretToBuild = turret;
     }

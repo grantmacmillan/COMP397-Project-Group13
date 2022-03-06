@@ -1895,6 +1895,8 @@ MonoBehaviour:
   rotationSpeed: 5
   health: 75
   healthBar: {fileID: 5070528728414057362}
+  lives: 5
+  goldAmount: 2
 --- !u!1 &1090689776963569888
 GameObject:
   m_ObjectHideFlags: 0
