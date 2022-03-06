@@ -48808,7 +48808,7 @@ MonoBehaviour:
   - {fileID: 3218087424204450820, guid: c872650904e3664429bec0bb435b4ead, type: 3}
   enemiesAlive: []
   waves: []
-  enemySpawnGapTime: 0.3
+  enemySpawnGapTime: 0.35
   waveCompletedGold: 5
   waveNum: 0
   firstRoundStarted: 0

@@ -64,6 +64,7 @@ public class EnemyWaveSpawning : MonoBehaviour
 
         if (enemiesAlive.Count == 0 && firstRoundStarted == true)
         {
+            waveCompletedGold += 1;
             ResourceManager.gold += waveCompletedGold;
             ResourceManager.waveNum++;
             waveNum++;
