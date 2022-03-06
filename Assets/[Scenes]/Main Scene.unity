@@ -7603,7 +7603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 60
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b6783ac3671643645b52ccdbdea4aefa, type: 2}
   m_sharedMaterial: {fileID: -3590632526631485092, guid: b6783ac3671643645b52ccdbdea4aefa,
@@ -47203,7 +47203,7 @@ MonoBehaviour:
     towerPrefab: {fileID: 5867045146055092984, guid: 317c5e8ca78c08d489f1c0d400def096,
       type: 3}
     gold: 80
-    wood: 60
+    wood: 50
     gem: 5
   woodTower:
     towerPrefab: {fileID: 8829403986137933680, guid: 11c0e068f1423714b95ac5de5248a0d6,
@@ -50567,7 +50567,7 @@ MonoBehaviour:
   - towerPrefab: {fileID: 5867045146055092984, guid: 317c5e8ca78c08d489f1c0d400def096,
       type: 3}
     gold: 80
-    wood: 60
+    wood: 50
     gem: 5
   - towerPrefab: {fileID: 8829403986137933680, guid: 11c0e068f1423714b95ac5de5248a0d6,
       type: 3}

@@ -861,7 +861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2
   rotationSpeed: 5
-  health: 250
+  health: 300
   healthBar: {fileID: 4075845077005835439}
   lives: 5
   goldAmount: 4
