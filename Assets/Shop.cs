@@ -6,7 +6,7 @@ public class Shop : MonoBehaviour
 {
     private BuildManager buildManager;
 
-    public Tower cannonTower, balistaTower, blasterTower;
+    public Tower cannonTower, balistaTower, blasterTower, woodTower, gemTower;
 
     void Start()
     {
@@ -23,6 +23,14 @@ public class Shop : MonoBehaviour
     public void PurchaseBlasterTower()
     {
         buildManager.SetTurretToBuild(buildManager.turrets[2]);
+    }
+    public void PurchaseWoodTower()
+    {
+        buildManager.SetTurretToBuild(buildManager.turrets[3]);
+    }
+    public void PurchaseGemTower()
+    {
+        buildManager.SetTurretToBuild(buildManager.turrets[4]);
     }
 
 

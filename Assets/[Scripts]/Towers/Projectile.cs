@@ -28,6 +28,8 @@ public class Projectile : MonoBehaviour
         }
 
         transform.Translate(dir.normalized * distance, Space.World);
+        transform.LookAt(target);
+        //transform.rotation = Quaternion.Euler(0,transform.rotation.y,transform.rotation.z);
     }
 
     void HitTarget()

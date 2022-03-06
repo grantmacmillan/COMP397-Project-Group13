@@ -53,7 +53,7 @@ public class Turret : MonoBehaviour
     {
         FindObjectOfType<Sound_Manager>().Play("CannonFire");
 
-        GameObject cannonball = (GameObject)Instantiate(cannonBallPrefab, firePoint.position, firePoint.rotation);
+        GameObject cannonball = Instantiate(cannonBallPrefab, firePoint.position, firePoint.rotation);
 
         Projectile projectile = cannonball.GetComponent<Projectile>();
 
