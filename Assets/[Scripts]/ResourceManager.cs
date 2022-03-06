@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    public TextMeshProUGUI goldText, woodText, gemsText;
-    public static int gold, wood, gems;
+    public TextMeshProUGUI goldText, woodText, gemsText, waveText;
+    public static int gold, wood, gems, waveNum, totalWaves;
     public int startingGold = 999, startingWood = 999, startingGems = 999;
 
     void Start()
@@ -14,6 +14,8 @@ public class ResourceManager : MonoBehaviour
         gold = startingGold;
         wood = startingWood;
         gems = startingGems;
+        waveNum = 1;
+        
     }
 
     public static bool Purchase(int g, int w, int gem)
@@ -33,5 +35,14 @@ public class ResourceManager : MonoBehaviour
         goldText.text = gold.ToString();
         woodText.text = wood.ToString();
         gemsText.text = gems.ToString();
+
+        //waveNum++;
+        waveText.text = "Wave: " + waveNum.ToString() + "/" + totalWaves.ToString();
+    }
+
+    public static void IncreaseWave()
+    {
+
+        
     }
 }

@@ -35,7 +35,9 @@ public class EnemyWaveSpawning : MonoBehaviour
         waves.Add(new Wave(6, 6, 6));
         waves.Add(new Wave(7, 7, 7));
         waves.Add(new Wave(8, 8, 8));
+        ResourceManager.totalWaves = waves.Count;
         StartCoroutine(SpawnWave(waves[0]));
+
     }
 
     void Update()
@@ -51,7 +53,9 @@ public class EnemyWaveSpawning : MonoBehaviour
         if (enemiesAlive.Count == 0)
         {
             ResourceManager.gold += waveCompletedGold;
+            ResourceManager.waveNum++;
             waveNum++;
+            
             if (waveNum < waves.Count)
             {
                 //else win game
