@@ -65,7 +65,7 @@ public class EnemyWaveSpawning : MonoBehaviour
                 StartCoroutine(SpawnWave(waves[waveNum]));
             }else
             {
-                SceneManager.LoadScene("Game Over");
+                SceneManager.LoadScene("Game Won");
             }
         }
 
