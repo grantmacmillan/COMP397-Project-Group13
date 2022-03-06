@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38df3161cb1f414c87e458d8fd89f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretRange: 3.5
+  turretRange: 6
   rotationSpeed: 5
-  fireRate: 0.75
+  fireRate: 0.25
   audioName: CannonFire
   projectilePrefab: {fileID: 8619160181754527093, guid: 9769dd7842086aa42963f847681e5c72,
     type: 3}
