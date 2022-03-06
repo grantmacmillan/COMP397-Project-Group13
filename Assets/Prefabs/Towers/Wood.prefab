@@ -1359,6 +1359,7 @@ GameObject:
   - component: {fileID: 5074522263900140143}
   - component: {fileID: 7028047903935743653}
   - component: {fileID: 6462071984437816361}
+  - component: {fileID: 5739484252381265803}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Untagged
@@ -1450,6 +1451,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7011651956591643717, guid: 57c7b59c4610b7d42bd7d46285bcf5d8, type: 3}
+--- !u!114 &5739484252381265803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829403986137933680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dabb71fd9caddd40a243a01dfaa8a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8938469991990171508
 GameObject:
   m_ObjectHideFlags: 0
