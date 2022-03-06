@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 3944835424234456842}
   - component: {fileID: 1250357626685862848}
   - component: {fileID: 2990225008516667724}
+  - component: {fileID: 3958850164380655046}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Untagged
@@ -566,6 +567,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7011651956591643717, guid: 57c7b59c4610b7d42bd7d46285bcf5d8, type: 3}
+--- !u!114 &3958850164380655046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746143791343211029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24316130e383717448e55a895acd3877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &925875581581222417
 GameObject:
   m_ObjectHideFlags: 0
