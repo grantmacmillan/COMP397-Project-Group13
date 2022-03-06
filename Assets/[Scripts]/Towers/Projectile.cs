@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
     private Transform target;
 
     public float speed = 1f;
+    public float damage;
 
     public void SetTarget(Transform _target)
     {
@@ -34,7 +35,7 @@ public class Projectile : MonoBehaviour
 
     void HitTarget()
     {
-        target.GetComponent<Enemy>().TakeDamage(25f);
+        target.GetComponent<Enemy>().TakeDamage(damage);
         Destroy(gameObject);
     }
 }

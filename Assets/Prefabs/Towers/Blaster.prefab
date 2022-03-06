@@ -146,10 +146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38df3161cb1f414c87e458d8fd89f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretRange: 2.5
+  turretRange: 4
   rotationSpeed: 5
-  fireRate: 1
-  cannonBallPrefab: {fileID: 1229504561875624433, guid: 22c7746ec075a2b448acb1e8c7813dcb,
+  fireRate: 2
+  audioName: CannonFire
+  projectilePrefab: {fileID: 1229504561875624433, guid: 22c7746ec075a2b448acb1e8c7813dcb,
     type: 3}
   firePoint: {fileID: 7898860010769345136}
 --- !u!1001 &4171006062309202162

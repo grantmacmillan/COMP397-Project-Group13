@@ -347,6 +347,7 @@ MonoBehaviour:
   turretRange: 2.5
   rotationSpeed: 5
   fireRate: 1
-  cannonBallPrefab: {fileID: 3090800803329551827, guid: 6fbda899f0859164d8db90bccd784b5a,
+  audioName: CannonFire
+  projectilePrefab: {fileID: 3090800803329551827, guid: 6fbda899f0859164d8db90bccd784b5a,
     type: 3}
   firePoint: {fileID: 7898860010769345136}

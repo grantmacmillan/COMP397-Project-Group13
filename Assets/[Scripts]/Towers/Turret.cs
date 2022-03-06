@@ -15,7 +15,8 @@ public class Turret : MonoBehaviour
     [Header("Unity")]
     private Transform cannonTransform;
 
-    public GameObject cannonBallPrefab;
+    public string audioName;
+    public GameObject projectilePrefab;
     public Transform firePoint;
 
     private void Start()
@@ -51,11 +52,11 @@ public class Turret : MonoBehaviour
 
     private void Fire()
     {
-        FindObjectOfType<Sound_Manager>().Play("CannonFire");
+        FindObjectOfType<Sound_Manager>().Play(audioName);
 
-        GameObject cannonball = Instantiate(cannonBallPrefab, firePoint.position, firePoint.rotation);
+        GameObject projectileObject = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
-        Projectile projectile = cannonball.GetComponent<Projectile>();
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
 
         projectile.SetTarget(target);
     }
