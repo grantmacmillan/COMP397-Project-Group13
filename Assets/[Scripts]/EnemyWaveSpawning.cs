@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyWaveSpawning : MonoBehaviour
 {
@@ -63,7 +64,7 @@ public class EnemyWaveSpawning : MonoBehaviour
                 StartCoroutine(SpawnWave(waves[waveNum]));
             }else
             {
-                Debug.Log("WIN");
+                SceneManager.LoadScene("Game Over");
             }
         }
 
