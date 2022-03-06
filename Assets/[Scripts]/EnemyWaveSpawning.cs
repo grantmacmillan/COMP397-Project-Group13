@@ -37,7 +37,14 @@ public class EnemyWaveSpawning : MonoBehaviour
         waves.Add(new Wave(20, 5, 1));
         waves.Add(new Wave(25, 7, 2));
         waves.Add(new Wave(30, 8, 3));
-        waves.Add(new Wave(30, 8, 3));
+        waves.Add(new Wave(60, 0, 0));
+        waves.Add(new Wave(0, 0, 10));
+        waves.Add(new Wave(40, 15, 4));
+        waves.Add(new Wave(50, 20, 5));
+        waves.Add(new Wave(20, 35, 8));
+        waves.Add(new Wave(0, 0, 20));
+        waves.Add(new Wave(10, 40, 9));
+        waves.Add(new Wave(0, 55, 25));
         ResourceManager.totalWaves = waves.Count;
         StartCoroutine(SpawnWave(waves[0]));
 
