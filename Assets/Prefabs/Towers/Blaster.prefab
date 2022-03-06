@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38df3161cb1f414c87e458d8fd89f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretRange: 4.5
+  turretRange: 5.5
   rotationSpeed: 5
   fireRate: 2.5
   audioName: CannonFire
