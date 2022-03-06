@@ -47202,7 +47202,7 @@ MonoBehaviour:
   blasterTower:
     towerPrefab: {fileID: 5867045146055092984, guid: 317c5e8ca78c08d489f1c0d400def096,
       type: 3}
-    gold: 80
+    gold: 65
     wood: 50
     gem: 5
   woodTower:
@@ -50566,7 +50566,7 @@ MonoBehaviour:
     gem: 0
   - towerPrefab: {fileID: 5867045146055092984, guid: 317c5e8ca78c08d489f1c0d400def096,
       type: 3}
-    gold: 80
+    gold: 65
     wood: 50
     gem: 5
   - towerPrefab: {fileID: 8829403986137933680, guid: 11c0e068f1423714b95ac5de5248a0d6,
@@ -50617,6 +50617,7 @@ MonoBehaviour:
   waves: []
   enemySpawnGapTime: 0.8
   waveCompletedGold: 5
+  waveNum: 0
 --- !u!114 &1696829119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50650,7 +50651,7 @@ MonoBehaviour:
   goldText: {fileID: 910426908}
   woodText: {fileID: 1821335771}
   gemsText: {fileID: 1812520546}
-  waveText: {fileID: 0}
+  waveText: {fileID: 44403173}
   startingGold: 25
   startingWood: 0
   startingGems: 0
@@ -60954,7 +60955,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 80
+  m_text: 65
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b6783ac3671643645b52ccdbdea4aefa, type: 2}
   m_sharedMaterial: {fileID: -3590632526631485092, guid: b6783ac3671643645b52ccdbdea4aefa,
