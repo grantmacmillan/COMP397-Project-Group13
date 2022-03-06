@@ -98,7 +98,7 @@ public class Enemy : MonoBehaviour
 
         healthBar.fillAmount = health / startHealth;
 
-        if (health <= 0)
+        if (health <= 0 && state != State.Dead)
         {
             StartCoroutine(KillEnemy());
         }

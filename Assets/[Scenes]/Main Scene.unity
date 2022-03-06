@@ -25832,7 +25832,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1430543851}
   life: {fileID: 973922959}
-  wood: {fileID: 1821335769}
 --- !u!1001 &1285985534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34359,7 +34358,9 @@ MonoBehaviour:
   life: {fileID: 973922959}
   wood: {fileID: 1821335769}
   lives: 0
-  woods: 
+  woods: 0
+  gold: 0
+  gems: 0
 --- !u!114 &1696829120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34375,9 +34376,9 @@ MonoBehaviour:
   goldText: {fileID: 910426908}
   woodText: {fileID: 1821335771}
   gemsText: {fileID: 1812520546}
-  startingGold: 999
-  startingWood: 999
-  startingGems: 999
+  startingGold: 15
+  startingWood: 0
+  startingGems: 0
 --- !u!1 &1698938382
 GameObject:
   m_ObjectHideFlags: 0

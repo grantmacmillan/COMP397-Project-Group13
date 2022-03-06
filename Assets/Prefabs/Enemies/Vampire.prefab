@@ -861,10 +861,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2
   rotationSpeed: 5
-  health: 100
+  health: 250
   healthBar: {fileID: 4075845077005835439}
   lives: 5
-  goldAmount: 3
+  goldAmount: 1
 --- !u!1 &3229189247263858186
 GameObject:
   m_ObjectHideFlags: 0

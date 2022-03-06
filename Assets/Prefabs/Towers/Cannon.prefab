@@ -346,7 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretRange: 2.5
   rotationSpeed: 5
-  fireRate: 1
+  fireRate: 0.65
   audioName: CannonFire
   projectilePrefab: {fileID: 3090800803329551827, guid: 6fbda899f0859164d8db90bccd784b5a,
     type: 3}
