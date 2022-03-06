@@ -40,13 +40,13 @@ public class PausedMenu : MonoBehaviour
     }
 
     public void LoadMenu(){
-        SceneManager.LoadScene("Load Menu");
+	    SceneManager.LoadScene("Load Menu");
+        pauseMenuUI.SetActive(false);
     }
 
 
     public void SaveMenu(){
         SaveSystem.SaveData(life,wood);
-        
     }
 
     public void ExitToMainMenu(){
