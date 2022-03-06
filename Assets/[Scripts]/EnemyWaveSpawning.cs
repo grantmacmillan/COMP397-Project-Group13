@@ -21,6 +21,8 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     public int waveNum = 0;
 
+    public bool firstRoundStarted = false;
+
     private void Start()
     {
         // skeletons, orcs, vampires
@@ -38,7 +40,7 @@ public class EnemyWaveSpawning : MonoBehaviour
         waves.Add(new Wave(25, 7, 2));
         waves.Add(new Wave(30, 8, 3));
         ResourceManager.totalWaves = waves.Count;
-        StartCoroutine(SpawnWave(waves[0]));
+        
 
     }
 
@@ -52,7 +54,7 @@ public class EnemyWaveSpawning : MonoBehaviour
             }
         }
 
-        if (enemiesAlive.Count == 0)
+        if (enemiesAlive.Count == 0 && firstRoundStarted == true)
         {
             ResourceManager.gold += waveCompletedGold;
             ResourceManager.waveNum++;
@@ -92,5 +94,12 @@ public class EnemyWaveSpawning : MonoBehaviour
     void SpawnEnemy(int enemy)
     {
         enemiesAlive.Add(Instantiate(enemiesToSpawn[enemy], spawnPoint.position, spawnPoint.rotation));
+    }
+
+    public void StartFirstWave()
+    {
+        StartCoroutine(SpawnWave(waves[0]));
+        firstRoundStarted = true;
+
     }
 }
