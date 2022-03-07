@@ -58310,9 +58310,9 @@ MonoBehaviour:
   woodText: {fileID: 1821335771}
   gemsText: {fileID: 1812520546}
   waveText: {fileID: 44403173}
-  startingGold: 999
-  startingWood: 999
-  startingGems: 999
+  startingGold: 25
+  startingWood: 0
+  startingGems: 0
 --- !u!1001 &1699600369
 PrefabInstance:
   m_ObjectHideFlags: 0
