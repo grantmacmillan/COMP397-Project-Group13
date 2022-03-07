@@ -58295,6 +58295,7 @@ MonoBehaviour:
   woods: 0
   gold: 0
   gems: 0
+  waveNum: 0
 --- !u!114 &1696829120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58314,6 +58315,7 @@ MonoBehaviour:
   startingGold: 25
   startingWood: 0
   startingGems: 0
+  lives: {fileID: 0}
 --- !u!1001 &1699600369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71071,7 +71073,7 @@ PrefabInstance:
     - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
       propertyPath: sounds.Array.data[6].volume
-      value: 0.2
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
