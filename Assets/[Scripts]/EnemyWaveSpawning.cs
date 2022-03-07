@@ -30,22 +30,26 @@ public class EnemyWaveSpawning : MonoBehaviour
         waves.Add(new Wave(5, 1, 0));
         waves.Add(new Wave(5, 2, 0));
         waves.Add(new Wave(8, 4, 0));
-        waves.Add(new Wave(10, 4, 0));
+        //5
+        waves.Add(new Wave(8, 7, 0));
         waves.Add(new Wave(10, 5, 0));
-        waves.Add(new Wave(20, 0, 0));
-        waves.Add(new Wave(0, 10, 0));
+        waves.Add(new Wave(15, 8, 0));
+        waves.Add(new Wave(0, 15, 0));
         waves.Add(new Wave(0, 0, 3));
-        waves.Add(new Wave(20, 5, 1));
-        waves.Add(new Wave(25, 7, 2));
-        waves.Add(new Wave(30, 8, 3));
-        waves.Add(new Wave(60, 0, 0));
-        waves.Add(new Wave(0, 0, 10));
-        waves.Add(new Wave(40, 15, 4));
-        waves.Add(new Wave(5, 10, 15));
-        waves.Add(new Wave(0, 5, 25));
-        waves.Add(new Wave(0, 0, 30));
-        waves.Add(new Wave(0, 0, 40));
-        waves.Add(new Wave(0, 0, 50));
+        //10
+        waves.Add(new Wave(20, 5, 3));
+        waves.Add(new Wave(25, 7, 3));
+        waves.Add(new Wave(20, 12, 3));
+        waves.Add(new Wave(15, 20, 5));
+        waves.Add(new Wave(0, 0, 12));
+        //15
+        waves.Add(new Wave(15, 18, 13));
+        waves.Add(new Wave(5, 10, 18));
+        waves.Add(new Wave(0, 5, 28));
+        waves.Add(new Wave(0, 0, 35));
+        waves.Add(new Wave(0, 0, 45));
+        //20
+        waves.Add(new Wave(0, 0, 55));
         ResourceManager.totalWaves = waves.Count;
         
 
