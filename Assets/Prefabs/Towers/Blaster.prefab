@@ -149,7 +149,7 @@ MonoBehaviour:
   turretRange: 5.5
   rotationSpeed: 5
   fireRate: 2.5
-  audioName: CannonFire
+  audioName: BlasterFire
   projectilePrefab: {fileID: 1229504561875624433, guid: 22c7746ec075a2b448acb1e8c7813dcb,
     type: 3}
   firePoint: {fileID: 7898860010769345136}
