@@ -6,21 +6,38 @@ using System.IO;
 
 public static class SaveSystem 
 {
-    public static void SaveData(GameObject life)
-    {
-#if UNITY_ANDROID && !UNITY_EDITOR
+    #if UNITY_ANDROID && !UNITY_EDITOR
 path =path.Combine(Application.persistentDataPath,"Save.json");
 #else
-    string path = Path.Combine(Application.dataPath, "Save.json");
+     
      
 #endif
+    public static void SaveData(GameObject life)
+    {
+        string path = Path.Combine(Application.dataPath, "Save.json");
         SaveData data = new SaveData(life);
         File.WriteAllText(path, JsonUtility.ToJson(data));
         Debug.Log("Data saved in file. Lives = " + data.lives+
             "    Gold: " + data.gold +
             "    Gems: " + data.gems +
-            "    Wood: "+ data.woods );
+            "    Wood: "+ data.woods +
+            "    Wave number: " + data.waveNum);
     }
 
+    public static SaveData LoadData()
+    {       
+        string path = Path.Combine(Application.dataPath, "Save.json");
+        if (File.Exists(path))
+        {
+            SaveData loadData = JsonUtility.FromJson<SaveData>(File.ReadAllText(path));
+            
+            return loadData;
+        }
+        else
+        {
+            Debug.LogError("Save file not found");
+            return null;
+        }
+    }
 }
 

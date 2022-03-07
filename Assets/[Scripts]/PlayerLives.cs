@@ -51,4 +51,9 @@ public class PlayerLives : MonoBehaviour
     {
        return currentLives;
     }
+
+    public void loadCurrentLives(int lives)
+    {
+        currentLives =lives;
+    }
 }
