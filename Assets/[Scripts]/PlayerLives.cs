@@ -9,7 +9,7 @@ public class PlayerLives : MonoBehaviour
     // Start is called before the first frame update
 
     public int maxLives = 5;
-     int currentLives;
+     public static int currentLives;
 
     public TextMeshProUGUI livesText;
 

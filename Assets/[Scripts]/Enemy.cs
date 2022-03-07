@@ -25,8 +25,8 @@ public class Enemy : MonoBehaviour
     private Transform target;
     private int currentWaypointIndex = 0;
 
-    public int lives = 5;
     public int goldAmount;
+    private int lives = 5;
     PlayerLives instance = new();
 
     private void Start()
@@ -76,20 +76,16 @@ public class Enemy : MonoBehaviour
     void GetNextWaypointFromIndex()
     {
         currentWaypointIndex++;
-        if (currentWaypointIndex > WaypointList.waypoints.Length)
+        if (currentWaypointIndex < WaypointList.waypoints.Length)
+        {
+            target = WaypointList.waypoints[currentWaypointIndex];
+            Vector3 dir = target.position - transform.position;
+            lookRotation = Quaternion.LookRotation(dir);
+        }
+        else
         {
             DestroyEnemy();
-            //put remove life code here
-            //PlayerLives.LoseLife(1);
-            
-            //instance.LoseLife();
-            Debug.Log("this is where u lose a life");
         }
-
-        target = WaypointList.waypoints[currentWaypointIndex];
-
-        Vector3 dir = target.position - transform.position;
-        lookRotation = Quaternion.LookRotation(dir);
     }
 
     public void TakeDamage(float amount)
