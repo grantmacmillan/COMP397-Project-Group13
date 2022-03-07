@@ -41,11 +41,11 @@ public class EnemyWaveSpawning : MonoBehaviour
         waves.Add(new Wave(60, 0, 0));
         waves.Add(new Wave(0, 0, 10));
         waves.Add(new Wave(40, 15, 4));
-        waves.Add(new Wave(50, 20, 5));
-        waves.Add(new Wave(20, 35, 8));
-        waves.Add(new Wave(0, 0, 20));
-        waves.Add(new Wave(10, 40, 9));
-        waves.Add(new Wave(0, 55, 25));
+        waves.Add(new Wave(5, 10, 15));
+        waves.Add(new Wave(0, 5, 25));
+        waves.Add(new Wave(0, 0, 30));
+        waves.Add(new Wave(0, 0, 40));
+        waves.Add(new Wave(0, 0, 50));
         ResourceManager.totalWaves = waves.Count;
         
 
