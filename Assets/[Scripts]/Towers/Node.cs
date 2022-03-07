@@ -15,6 +15,8 @@ public class Node : MonoBehaviour
 
     private BuildManager buildManager;
 
+    public GameObject towerRadiusPrefab, radiusObject;
+
     void Start()
     {
         buildManager = BuildManager.instance;
@@ -50,6 +52,8 @@ public class Node : MonoBehaviour
             return;
         if (buildManager.GetTurretToBuild() != null)
         {
+            radiusObject = (GameObject)Instantiate(towerRadiusPrefab, transform.position + new Vector3(0,0.2f,0), transform.rotation);
+            radiusObject.transform.localScale = new Vector3(buildManager.GetTurretToBuild().range, radiusObject.transform.localScale.y, buildManager.GetTurretToBuild().range);
             renderer.materials[1].color = hoverColor;
         }
     }
@@ -57,5 +61,6 @@ public class Node : MonoBehaviour
     private void OnMouseExit()
     {
         renderer.materials[1].color = originalColor;
+        Destroy(radiusObject);
     }
 }
