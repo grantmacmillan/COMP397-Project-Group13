@@ -6,5 +6,6 @@ using UnityEngine;
 public class Tower
 {
     public GameObject towerPrefab;
+    public float range;
     public int gold, wood, gem;
 }

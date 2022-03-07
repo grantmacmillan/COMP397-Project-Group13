@@ -33,9 +33,9 @@ public class EnemyWaveSpawning : MonoBehaviour
         //5
         waves.Add(new Wave(8, 7, 0));
         waves.Add(new Wave(10, 5, 0));
-        waves.Add(new Wave(15, 8, 0));
-        waves.Add(new Wave(0, 15, 0));
-        waves.Add(new Wave(0, 0, 3));
+        waves.Add(new Wave(15, 8, 1));
+        waves.Add(new Wave(0, 15, 1));
+        waves.Add(new Wave(0, 0, 4));
         //10
         waves.Add(new Wave(20, 5, 3));
         waves.Add(new Wave(25, 7, 3));

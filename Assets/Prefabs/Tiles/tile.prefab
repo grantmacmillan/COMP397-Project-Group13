@@ -115,6 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionOffset: {x: 0, y: 0.2, z: 0}
   hoverColor: {r: 0.23137257, g: 0.58431375, b: 0.52156866, a: 0.57254905}
+  towerRadiusPrefab: {fileID: 1213701425515219783, guid: 257b2420ef1676a4fb9e4f07ca0b3714,
+    type: 3}
 --- !u!65 &-9078197934796492019
 BoxCollider:
   m_ObjectHideFlags: 0
