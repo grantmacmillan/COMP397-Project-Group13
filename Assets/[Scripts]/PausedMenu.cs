@@ -45,6 +45,7 @@ public class PausedMenu : MonoBehaviour
     }
 
 
+
     public void SaveMenu(){
         SaveSystem.SaveData(life);
     }

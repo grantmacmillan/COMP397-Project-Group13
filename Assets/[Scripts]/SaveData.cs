@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class SaveData:MonoBehaviour 
+public class SaveData : MonoBehaviour
 {
     [SerializeField]
     private GameObject life;
     [SerializeField]
     private GameObject wood;
     public int lives;
-    public int woods,gold, gems;
-    
+    public int woods, gold, gems, waveNum;
 
 
-public SaveData(GameObject life)
+
+    public SaveData(GameObject life)
     {
         lives = life.GetComponentInChildren<PlayerLives>().getCurrentLives();
         woods = ResourceManager.wood;
         gold = ResourceManager.gold;
         gems = ResourceManager.gems;
+        waveNum = ResourceManager.waveNum;
     }
 }
