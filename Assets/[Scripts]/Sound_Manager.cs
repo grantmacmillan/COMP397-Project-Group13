@@ -5,7 +5,7 @@ using System;
 public class Sound_Manager : MonoBehaviour
 {
     //public static AudioClip coinPickUp, pickUpItem, balloonPop, dropItem, door, fan;
-
+    public AudioMixerGroup audioMixer;
     public Sound[] sounds;
 
     void Awake()
@@ -13,6 +13,7 @@ public class Sound_Manager : MonoBehaviour
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
+            s.source.outputAudioMixerGroup = audioMixer;
             s.source.clip = s.clip;
 
             s.source.volume = s.volume;

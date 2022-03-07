@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d46028ed7da59ef4aaef2bf2dffcf57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24300002, guid: 56b7f1330538a6a439e55e440a0eb024, type: 2}
   sounds:
   - name: Purchase
     clip: {fileID: 8300000, guid: b3d02b367cba57d40a2945c16e3c3f70, type: 3}
