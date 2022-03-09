@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class SaveData : MonoBehaviour
+public class SaveData 
 {
     [SerializeField]
     private GameObject life;
@@ -11,7 +11,6 @@ public class SaveData : MonoBehaviour
     private GameObject wood;
     public int lives;
     public int woods, gold, gems, waveNum;
-
 
 
     public SaveData(GameObject life)

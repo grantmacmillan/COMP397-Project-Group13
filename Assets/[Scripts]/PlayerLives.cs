@@ -54,6 +54,8 @@ public class PlayerLives : MonoBehaviour
 
     public void loadCurrentLives(int lives)
     {
+        Debug.Log("Call Current lives function");
         currentLives =lives;
+        livesText.text = currentLives.ToString();
     }
 }

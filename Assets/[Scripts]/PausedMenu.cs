@@ -7,7 +7,7 @@ public class PausedMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
-    public GameObject pauseMenuUI;
+    public GameObject pauseMenuUI, loadMenuUI;
     [SerializeField]
     private GameObject life;
 
@@ -28,6 +28,7 @@ public class PausedMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        loadMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -37,14 +38,16 @@ public class PausedMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        
     }
 
     public void LoadMenu(){
-	    SceneManager.LoadScene("Load Menu");
-        pauseMenuUI.SetActive(false);
+        // SceneManager.LoadScene("Load Menu");
+         pauseMenuUI.SetActive(false);
+        loadMenuUI.SetActive(true);
+        
+
     }
-
-
 
     public void SaveMenu(){
         SaveSystem.SaveData(life);

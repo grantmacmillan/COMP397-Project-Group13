@@ -2471,7 +2471,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1099021225}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1541638366}
+        m_TargetAssemblyTypeName: ResourceManager, Assembly-CSharp
+        m_MethodName: LoadData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1099021225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3324,6 +3336,7 @@ GameObject:
   - component: {fileID: 1541638364}
   - component: {fileID: 1541638363}
   - component: {fileID: 1541638362}
+  - component: {fileID: 1541638366}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3415,6 +3428,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1541638366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541638361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7a3fa989bbd924abf7bf85802897c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldText: {fileID: 0}
+  woodText: {fileID: 0}
+  gemsText: {fileID: 0}
+  waveText: {fileID: 0}
+  startingGold: 999
+  startingWood: 999
+  startingGems: 999
+  lives: {fileID: 0}
+  pauseMenuUI: {fileID: 0}
 --- !u!1 &1765731754
 GameObject:
   m_ObjectHideFlags: 0

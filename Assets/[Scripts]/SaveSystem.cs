@@ -27,10 +27,17 @@ path =path.Combine(Application.persistentDataPath,"Save.json");
     public static SaveData LoadData()
     {       
         string path = Path.Combine(Application.dataPath, "Save.json");
+        Debug.Log(path);
         if (File.Exists(path))
         {
-            SaveData loadData = JsonUtility.FromJson<SaveData>(File.ReadAllText(path));
             
+            SaveData loadData = JsonUtility.FromJson<SaveData>(File.ReadAllText(path));
+        
+            Debug.Log("Data loaded from file. Lives = " + loadData.lives +
+            "    Gold: " + loadData.gold +
+            "    Gems: " + loadData.gems +
+            "    Wood: " + loadData.woods +
+            "    Wave number: " + loadData.waveNum);
             return loadData;
         }
         else

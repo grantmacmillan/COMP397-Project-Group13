@@ -10,7 +10,8 @@ public class ResourceManager : MonoBehaviour
     public static int gold, wood, gems, waveNum, totalWaves, currentLives;
     public int startingGold = 999, startingWood = 999, startingGems = 999;
     public GameObject lives;
-   
+    public GameObject pauseMenuUI;
+
 
     void Start()
     {
@@ -52,19 +53,18 @@ public class ResourceManager : MonoBehaviour
 
     public void LoadData()
     {
-        //SceneManager.LoadScene("Main Scene");
+        SceneManager.LoadScene("Main Scene");
         SaveData data = SaveSystem.LoadData();
-         currentLives = data.lives;
-         wood = data.woods;
-         gold = data.gold;
-         gems = data.gems;
-         waveNum = data.waveNum;
-         lives.GetComponent<PlayerLives>().loadCurrentLives(currentLives);
-        Debug.Log("Data loaded from file. Lives = " + currentLives +
-            "    Gold: " + gold +
-            "    Gems: " + gems +
-            "    Wood: " + wood +
-            "    Wave number: " + waveNum);
+        currentLives = data.lives;
+        wood = data.woods;
+        gold = data.gold;
+        gems = data.gems;
+        waveNum = data.waveNum;
+        lives.GetComponent<PlayerLives>().loadCurrentLives(currentLives);
+       
+        pauseMenuUI.SetActive(false);
+        
+       
 
     }
 }
