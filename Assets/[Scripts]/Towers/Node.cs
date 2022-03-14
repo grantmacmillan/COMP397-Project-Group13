@@ -18,11 +18,14 @@ public class Node : MonoBehaviour
 
     public GameObject towerRadiusPrefab, radiusObject;
 
+    void Awake()
+    {
+        btn = GameObject.Find("Place Tower").GetComponent<Button>();
+    }
     void Start()
     {
         buildManager = BuildManager.instance;
         renderer = GetComponent<Renderer>();
-        btn = GameObject.Find("Place Tower").GetComponent<Button>();
         originalColor = renderer.materials[1].color;
     }
 #if UNITY_STANDALONE
@@ -53,13 +56,17 @@ public class Node : MonoBehaviour
 #endif
     private void OnMouseEnter()
     {
+#if UNITY_STANDALONE
         if (EventSystem.current.IsPointerOverGameObject())
             return;
+#endif
+#if UNITY_IOS || UNITY_ANDROID
         if (EventSystem.current.IsPointerOverGameObject(0))
             return;
+#endif
         if (buildManager.GetTurretToBuild() != null)
         {
-            radiusObject = (GameObject)Instantiate(towerRadiusPrefab, transform.position + new Vector3(0,0.2f,0), transform.rotation);
+            radiusObject = (GameObject)Instantiate(towerRadiusPrefab, transform.position + new Vector3(0, 0.2f, 0), transform.rotation);
             radiusObject.transform.localScale = new Vector3(buildManager.GetTurretToBuild().range, radiusObject.transform.localScale.y, buildManager.GetTurretToBuild().range);
             renderer.materials[1].color = hoverColor;
 #if UNITY_IOS || UNITY_ANDROID
