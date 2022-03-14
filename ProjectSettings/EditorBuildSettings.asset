@@ -18,5 +18,7 @@ EditorBuildSettings:
     path: Assets/[Scenes]/Game Won.unity
     guid: b37a0698810f67947804fc0b448b754d
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 81dbfb5b0cf0bd64091bb5042ac5e7ce,
+      type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 66e6a127b2188f746a0fdb682ca0744d, type: 2}
