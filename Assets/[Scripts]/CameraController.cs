@@ -8,7 +8,8 @@ using Vector3 = UnityEngine.Vector3;
 
 public class CameraController : MonoBehaviour
 {
-    public float panSpeed, zoomSpeed;
+#if UNITY_STANDALONE
+    public float panSpeed = 15, zoomSpeed = 2;
     private float currentZoom = 0f, zoomRotation = 1;
     private Vector2 zoomRange = new Vector2(-7, 7);
     private Vector2 panRangeX = new Vector2(0, 14);
@@ -48,4 +49,5 @@ public class CameraController : MonoBehaviour
         transform.position -= new Vector3(0f,(transform.position.y - (initPos.y + currentZoom)) * 0.1f, 0f);
         transform.eulerAngles -= new Vector3((transform.eulerAngles.x - (initRotation.x + currentZoom * zoomRotation)) * 0.1f, 0f, 0f);
     }
+#endif
 }

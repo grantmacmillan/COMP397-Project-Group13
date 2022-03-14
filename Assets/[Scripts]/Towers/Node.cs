@@ -23,13 +23,15 @@ public class Node : MonoBehaviour
         renderer = GetComponent<Renderer>();
         originalColor = renderer.materials[1].color;
     }
-
+#if UNITY_STANDALONE
     private void OnMouseDown()
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
+
         if (buildManager.GetTurretToBuild() != null)
         {
+            Debug.Log("Place");
             if (turret != null)
             {
                 Debug.Log("occupied");
@@ -46,6 +48,7 @@ public class Node : MonoBehaviour
             }
         }
     }
+#endif
     private void OnMouseEnter()
     {
         if (EventSystem.current.IsPointerOverGameObject())

@@ -23,9 +23,9 @@ class MobileCamController : MonoBehaviour
     public Camera Camera;
     public bool Rotate;
     protected Plane Plane;
-    public float DecreaseCameraPanSpeed = 1; //Default speed is 1
-    public float CameraUpperHeightBound; //Zoom out
-    public float CameraLowerHeightBound; //Zoom in
+    public float DecreaseCameraPanSpeed = 5; //Default speed is 1
+    public float CameraUpperHeightBound = 7; //Zoom out
+    public float CameraLowerHeightBound = 7; //Zoom in
     private Vector2 panRangeX = new Vector2(0, 14);
     private Vector2 panRangeZ = new Vector2(-10, 0);
 
