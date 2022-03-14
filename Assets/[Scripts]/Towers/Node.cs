@@ -53,6 +53,8 @@ public class Node : MonoBehaviour
 #endif
     private void OnMouseEnter()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
         if (EventSystem.current.IsPointerOverGameObject(0))
             return;
         if (buildManager.GetTurretToBuild() != null)
