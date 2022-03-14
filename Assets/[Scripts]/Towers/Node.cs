@@ -71,9 +71,6 @@ public class Node : MonoBehaviour
     {
         renderer.materials[1].color = originalColor;
         Destroy(radiusObject);
-#if UNITY_IOS || UNITY_ANDROID
-        //btn.gameObject.SetActive(false);
-#endif
     }
 #if UNITY_IOS || UNITY_ANDROID
     public void BuildTower()
