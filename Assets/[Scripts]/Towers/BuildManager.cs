@@ -15,7 +15,13 @@ public class BuildManager : MonoBehaviour
     {
         instance = this;
         btn = GameObject.Find("Place Tower").GetComponent<Button>();
+#if UNITY_IOS || UNITY_ANDROID
         btn.onClick.AddListener(BuildTowerOnTile);
+#endif
+    }
+    private void Start()
+    {
+        btn.gameObject.SetActive(false);
     }
     public Tower GetTurretToBuild()
     {
@@ -26,7 +32,7 @@ public class BuildManager : MonoBehaviour
     {
         turretToBuild = turret;
     }
-
+#if UNITY_IOS || UNITY_ANDROID
     public void SetTileSelected(GameObject tile)
     {
         selectedTile = tile;
@@ -36,4 +42,5 @@ public class BuildManager : MonoBehaviour
     {
         selectedTile.GetComponent<Node>().BuildTower();
     }
+#endif
 }
