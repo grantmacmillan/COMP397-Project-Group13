@@ -7,46 +7,43 @@ public class PausedMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
-    public GameObject pauseMenuUI, loadMenuUI;
-    [SerializeField]
-    private GameObject life;
+    [SerializeField] private GameObject pauseMenu, loadMenu;
+    [SerializeField] private GameObject life;
+
+    //Finds the pause panel
+    void Start() {
+        pauseMenu.SetActive(false);
+        loadMenu.SetActive(false);
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+        //Checks if the game is paused
+        if (Input.GetKeyDown(KeyCode.P))
             if (GameIsPaused)
-            {
                 Resume();
-            } else
-            {
+            else
                 Pause();
-            }
-        }
     }
 
-    public void Resume()
-    {
-        pauseMenuUI.SetActive(false);
-        loadMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+    public void Resume() {
+        pauseMenu.SetActive(false);
+        loadMenu.SetActive(false);
+        Time.timeScale = 1.0f;
         GameIsPaused = false;
     }
 
-    void Pause()
-    {
-        pauseMenuUI.SetActive(true);
+    void Pause() {
         Time.timeScale = 0f;
         GameIsPaused = true;
-        
+        pauseMenu.SetActive(true);
+
     }
 
     public void LoadMenu(){
-        // SceneManager.LoadScene("Load Menu");
-         pauseMenuUI.SetActive(false);
-        loadMenuUI.SetActive(true);
-        
-
+        //SceneManager.LoadScene("Load Menu");
+        pauseMenu.SetActive(false);
+        loadMenu.SetActive(true);
     }
 
     public void SaveMenu(){
@@ -56,5 +53,4 @@ public class PausedMenu : MonoBehaviour
     public void ExitToMainMenu(){
         SceneManager.LoadScene("Main Menu");
     }
-
 }
