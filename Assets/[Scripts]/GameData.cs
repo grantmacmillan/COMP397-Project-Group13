@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[System.Serializable]
 public class SaveData 
 {
-    [SerializeField]
-    private GameObject life;
-    [SerializeField]
-    private GameObject wood;
     public int lives;
     public int woods, gold, gems, waveNum;
 
+    public string turretName;
 
-    public SaveData(GameObject life)
-    {
+    //Turret Information
+    public float[] turretPosition;
+
+    public SaveData(GameObject life) {
         lives = life.GetComponentInChildren<PlayerLives>().getCurrentLives();
         woods = ResourceManager.wood;
         gold = ResourceManager.gold;

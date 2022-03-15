@@ -58498,6 +58498,8 @@ GameObject:
   - component: {fileID: 1696829119}
   - component: {fileID: 1696829120}
   - component: {fileID: 1696829121}
+  - component: {fileID: 1696829122}
+  - component: {fileID: 1696829123}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -58616,11 +58618,21 @@ MonoBehaviour:
   woodText: {fileID: 1821335771}
   gemsText: {fileID: 1812520546}
   waveText: {fileID: 44403173}
+  livesText: {fileID: 973922962}
   startingGold: 25
   startingWood: 0
   startingGems: 0
-  lives: {fileID: 0}
   pauseMenuUI: {fileID: 0}
+  cannonPrefab: {fileID: 5867045146055092984, guid: d66ed549f7d7d224087a181ce64782b9,
+    type: 3}
+  balistaPrefab: {fileID: 5867045146055092984, guid: 4fbe262cacb84e443b4a9608d7761980,
+    type: 3}
+  blasterPrefab: {fileID: 5867045146055092984, guid: 317c5e8ca78c08d489f1c0d400def096,
+    type: 3}
+  woodPrefab: {fileID: 8829403986137933680, guid: 11c0e068f1423714b95ac5de5248a0d6,
+    type: 3}
+  gemPrefab: {fileID: 746143791343211029, guid: dd0c9a87032cb8a4e802a7bfc0eea5fc,
+    type: 3}
 --- !u!114 &1696829121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58636,6 +58648,48 @@ MonoBehaviour:
   pauseMenu: {fileID: 1372213619}
   loadMenu: {fileID: 347106403}
   life: {fileID: 973922959}
+--- !u!114 &1696829122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696829115}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d304aa9065ba56c4f94e3d23452130ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1696829123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696829115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f235536e3c36dad498580a252e4d11ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeSave:
+    saveName: Game1
+    woodAmount: 0
+    gemAmount: 0
+    goldAmount: 0
+    waveNumber: 0
+    livesAmount: 0
+    cannonCount: 0
+    balistaCount: 0
+    blasterCount: 0
+    woodTowerCount: 0
+    gemTowerCount: 0
+    cannonPositions: []
+    balistaPositions: []
+    blasterPositions: []
+    woodTowerPositions: []
+    gemTowerPositions: []
+  hasLoaded: 0
 --- !u!1001 &1699600369
 PrefabInstance:
   m_ObjectHideFlags: 0

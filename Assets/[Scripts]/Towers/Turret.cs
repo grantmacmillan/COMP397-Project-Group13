@@ -19,18 +19,45 @@ public class Turret : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform firePoint;
 
-    private void Start()
-    {
+    private void Awake() {
+        //Counts which tower was previously placed
+        if (this.name.StartsWith("Cannon") && !SaveManager.instance.hasLoaded) {
+            //Adds to save data
+            SaveManager.instance.activeSave.cannonPositions.Add(this.transform.position.x);
+            SaveManager.instance.activeSave.cannonPositions.Add(this.transform.position.y);
+            SaveManager.instance.activeSave.cannonPositions.Add(this.transform.position.z);
+
+            //Counts the number of cannon turrets placed
+            SaveManager.instance.activeSave.cannonCount++;
+        }
+        if (this.name.StartsWith("Balista") && !SaveManager.instance.hasLoaded) {
+            //Adds to save data
+            SaveManager.instance.activeSave.balistaPositions.Add(this.transform.position.x);
+            SaveManager.instance.activeSave.balistaPositions.Add(this.transform.position.y);
+            SaveManager.instance.activeSave.balistaPositions.Add(this.transform.position.z);
+
+            //Counts the number of balista turrets placed
+            SaveManager.instance.activeSave.balistaCount++;
+        }
+        if (this.name.StartsWith("Blaster") && !SaveManager.instance.hasLoaded) {
+            //Adds to save data
+            SaveManager.instance.activeSave.blasterPositions.Add(this.transform.position.x);
+            SaveManager.instance.activeSave.blasterPositions.Add(this.transform.position.y);
+            SaveManager.instance.activeSave.blasterPositions.Add(this.transform.position.z);
+
+            //Counts the number of blaster turrets placed
+            SaveManager.instance.activeSave.blasterCount++;
+        }
+    }
+    private void Start() {
         cannonTransform = transform.GetChild(0).transform;
     }
-    void OnDrawGizmosSelected()
-    {
+    void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, turretRange);
     }
 
-    private void Update()
-    {
+    private void Update() {
         CheckEnemyDistance();
 
         if (target != null)
@@ -50,8 +77,7 @@ public class Turret : MonoBehaviour
         }
     }
 
-    private void Fire()
-    {
+    private void Fire() {
         FindObjectOfType<Sound_Manager>().Play(audioName);
 
         GameObject projectileObject = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
@@ -61,8 +87,7 @@ public class Turret : MonoBehaviour
         projectile.SetTarget(target);
     }
 
-    private void CheckEnemyDistance()
-    {
+    private void CheckEnemyDistance() {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject nearestEnemy = null;
         float closestEnemy = Mathf.Infinity;

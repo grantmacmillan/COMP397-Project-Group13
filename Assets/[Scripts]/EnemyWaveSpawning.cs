@@ -51,8 +51,6 @@ public class EnemyWaveSpawning : MonoBehaviour
         //20
         waves.Add(new Wave(0, 0, 55));
         ResourceManager.totalWaves = waves.Count;
-        
-
     }
 
     void Update()
@@ -72,12 +70,10 @@ public class EnemyWaveSpawning : MonoBehaviour
             ResourceManager.waveNum++;
             waveNum++;
             
-            if (waveNum < ResourceManager.totalWaves)
-            {
+            if (waveNum < ResourceManager.totalWaves) {
                 //else win game
                 StartCoroutine(SpawnWave(waves[waveNum]));
-            }else
-            {
+            } else {
                 SceneManager.LoadScene("Game Won");
             }
         }
@@ -110,8 +106,13 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     public void StartFirstWave()
     {
-        StartCoroutine(SpawnWave(waves[0]));
-        firstRoundStarted = true;
-
+        if (ResourceManager.waveNum <= 1) {
+            StartCoroutine(SpawnWave(waves[0]));
+            firstRoundStarted = true;
+        }
+        else {
+            StartCoroutine(SpawnWave(waves[ResourceManager.waveNum - 1]));
+            firstRoundStarted = true;
+        }
     }
 }

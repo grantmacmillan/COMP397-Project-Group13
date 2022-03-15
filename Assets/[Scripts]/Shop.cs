@@ -12,24 +12,23 @@ public class Shop : MonoBehaviour
     {
         buildManager = BuildManager.instance;
     }
-    public void PurchaseCannonTower()
-    {
+    public void PurchaseCannonTower() {
         buildManager.SetTurretToBuild(buildManager.turrets[0]);
     }
-    public void PurchaseBalistaTower()
-    {
+    public void PurchaseBalistaTower() {
         buildManager.SetTurretToBuild(buildManager.turrets[1]);
     }
-    public void PurchaseBlasterTower()
-    {
+
+    public void PurchaseBlasterTower() {
         buildManager.SetTurretToBuild(buildManager.turrets[2]);
     }
+
     public void PurchaseWoodTower()
     {
         buildManager.SetTurretToBuild(buildManager.turrets[3]);
     }
-    public void PurchaseGemTower()
-    {
+
+    public void PurchaseGemTower() {
         buildManager.SetTurretToBuild(buildManager.turrets[4]);
     }
 
