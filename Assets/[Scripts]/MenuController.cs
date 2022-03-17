@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    public GameObject newGameMenu;
+    void Start() {
+        newGameMenu = GameObject.Find("New Game Menu");
+        newGameMenu.SetActive(false);
+    }
+
     // Start is called before the first frame update
     public void update()
     {
@@ -12,8 +18,10 @@ public class MenuController : MonoBehaviour
     }
     public void NewGame()
     {
-        SceneManager.LoadScene(1);
-        Time.timeScale = 1f;
+        //SceneManager.LoadScene(1);
+        //Time.timeScale = 1f;
+        newGameMenu.SetActive(true);
+
     }
     public void QuitGame()
     {

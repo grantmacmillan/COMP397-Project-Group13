@@ -13,24 +13,22 @@ public class SaveManager : MonoBehaviour
     //Singleton
     private void Awake() {
         instance = this;
-        Load();
-    }
+        this.activeSave.saveName = PlayerPrefs.GetString("Save Name");
+        Debug.Log("Active Save Name: " + this.activeSave.saveName);
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-            Save();
-        if (Input.GetKeyDown(KeyCode.M))
+        if (PlayerPrefs.GetInt("Has Loaded") == 1) 
             Load();
+
+        if (PlayerPrefs.GetInt("Has Loaded") == 0)
+            ResetData();
     }
 
     //Saving a game state
     public void Save() {
-        string pathName = Directory.GetCurrentDirectory();
-        string dataPath = pathName + "\\Assets\\Data";
+        string pathName = Application.persistentDataPath;
 
         var serializer = new XmlSerializer(typeof(Data));
-        var stream = new FileStream(dataPath + "\\" + activeSave.saveName + ".txt", FileMode.Create);
+        var stream = new FileStream(pathName + "\\" + activeSave.saveName + ".txt", FileMode.Create);
         serializer.Serialize(stream, activeSave);
         stream.Close();
 
@@ -39,18 +37,26 @@ public class SaveManager : MonoBehaviour
 
     //Loading a game state
     public void Load() {
-        string pathName = Directory.GetCurrentDirectory();
-        string dataPath = pathName + "\\Assets\\Data";
+        string pathName = Application.persistentDataPath;
 
-        if (File.Exists(dataPath + "\\" + activeSave.saveName + ".txt")) {
+        if (File.Exists(pathName + "\\" + activeSave.saveName + ".txt")) {
             var serializer = new XmlSerializer(typeof(Data));
-            var stream = new FileStream(dataPath + "\\" + activeSave.saveName + ".txt", FileMode.Open);
+            var stream = new FileStream(pathName + "\\" + activeSave.saveName + ".txt", FileMode.Open);
 
             activeSave = serializer.Deserialize(stream) as Data;
             stream.Close();
 
             hasLoaded = true;
             Debug.Log("Loaded");
+        }
+    }
+
+    public void ResetData() {
+        string pathName = Application.persistentDataPath; 
+
+        if (File.Exists(pathName + "\\" + activeSave.saveName + ".txt")) {
+            hasLoaded = false;
+            Debug.Log("Data reset complete!");
         }
     }
 }
