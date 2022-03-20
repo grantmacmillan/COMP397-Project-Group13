@@ -112,18 +112,4 @@ public class ResourceManager : MonoBehaviour
             else
                 Instantiate(obj, new Vector3(positions[3 * i], positions[1 + (3 * i)], positions[2 + (3 * i)]), Quaternion.identity);
     }
-
-  /*public void LoadData()
-    {
-        SceneManager.LoadScene("Main Scene");
-        SaveData data = SaveSystem.LoadData();
-        currentLives = data.lives;
-        wood = data.woods;
-        gold = data.gold;
-        gems = data.gems;
-        waveNum = data.waveNum;
-        lives.GetComponent<PlayerLives>().loadCurrentLives(currentLives);
-       
-        pauseMenuUI.SetActive(false);
-    }*/
 }

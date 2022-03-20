@@ -33,20 +33,18 @@ public class PausedMenu : MonoBehaviour
         GameIsPaused = false;
     }
 
-    void Pause() {
+    public void Pause() {
         Time.timeScale = 0f;
         GameIsPaused = true;
         pauseMenu.SetActive(true);
     }
 
     public void LoadMenu() {
-        //SceneManager.LoadScene("Load Menu");
-        pauseMenu.SetActive(false);
+        //pauseMenu.SetActive(false);
         loadMenu.SetActive(true);
     }
 
     public void SaveMenu() {
-        //SaveSystem.SaveData(life);
         SaveManager.instance.Save();
     }
 

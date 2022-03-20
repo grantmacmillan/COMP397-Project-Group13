@@ -6,7 +6,7 @@ using System.IO;
 
 public static class SaveSystem 
 {
-#if UNITY_ANDROID && !UNITY_EDITOR
+/*#if UNITY_ANDROID && !UNITY_EDITOR
 path =path.Combine(Application.persistentDataPath,"Save.json");
 #else
 
@@ -48,6 +48,6 @@ path =path.Combine(Application.persistentDataPath,"Save.json");
             hasLoaded = false;
             return null;
         }
-    }
+    }*/
 }
 
