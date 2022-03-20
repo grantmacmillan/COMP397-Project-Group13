@@ -55,11 +55,11 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     void Update()
     {
-        foreach (GameObject enemy in enemiesAlive)
+        for (int i = 0; i < enemiesAlive.Count; i++ )
         {
-            if (enemy == null)
+            if (enemiesAlive[i] == null)
             {
-                enemiesAlive.Remove(enemy);
+                enemiesAlive.RemoveAt(i);
             }
         }
 
