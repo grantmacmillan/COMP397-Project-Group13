@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18383193, g: 0.22909349, b: 0.3038155, a: 1}
+  m_IndirectSpecularColor: {r: 0.18383202, g: 0.22909349, b: 0.30381536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23562,7 +23562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -442, y: -695}
+  m_AnchoredPosition: {x: -153, y: -659.78}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &702108527
@@ -24752,11 +24752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a028034ffdbac040951db6e1c8f85b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 0}
-  Rotate: 0
-  DecreaseCameraPanSpeed: 5
-  CameraUpperHeightBound: 7
-  CameraLowerHeightBound: 7
 --- !u!4 &728372807
 Transform:
   m_ObjectHideFlags: 0
@@ -28278,7 +28273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 211, y: -28}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 431.7848, y: 431.7848}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &858708406
@@ -31329,7 +31324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1495, y: -553}
+  m_AnchoredPosition: {x: 1688, y: -675}
   m_SizeDelta: {x: 375, y: 375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940571711
@@ -32083,6 +32078,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10df703ae57a9a148a6a1db9eacdc77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panSpeed: 15
+  zoomSpeed: 2
 --- !u!82 &963194230
 AudioSource:
   m_ObjectHideFlags: 0
@@ -43103,10 +43100,10 @@ RectTransform:
   m_Father: {fileID: 1283762051}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3078, y: -243}
-  m_SizeDelta: {x: 309.837, y: 309.837}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 561, y: -154.92}
+  m_SizeDelta: {x: 309.8369, y: 309.837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232562497
 MonoBehaviour:
@@ -44672,6 +44669,7 @@ GameObject:
   - component: {fileID: 1283762049}
   - component: {fileID: 1283762048}
   - component: {fileID: 1283762052}
+  - component: {fileID: 1283762053}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -44713,7 +44711,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 3840, y: 2160}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.353
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -44783,6 +44781,18 @@ MonoBehaviour:
   pauseMenu: {fileID: 1372213619}
   loadMenu: {fileID: 347106403}
   life: {fileID: 973922959}
+--- !u!114 &1283762053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283762047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351aded9304726a479883664a90c8953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1283797435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53108,7 +53118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1481, y: -553}
+  m_AnchoredPosition: {x: -1681, y: -675}
   m_SizeDelta: {x: 375, y: 375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1512111242
@@ -56100,7 +56110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -834, y: -183}
+  m_AnchoredPosition: {x: -629.7803, y: -183}
   m_SizeDelta: {x: 1259.5605, y: 171.5905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616260863
