@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Dead
+  - cannonball
+  - bullet
+  - arrow
   layers:
   - Default
   - TransparentFX

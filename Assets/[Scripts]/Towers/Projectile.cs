@@ -36,6 +36,7 @@ public class Projectile : MonoBehaviour
     void HitTarget()
     {
         target.GetComponent<Enemy>().TakeDamage(damage);
-        Destroy(gameObject);
+        ObjectPooler.Instance.poolDictionary[tag].Release(gameObject);
+        //Destroy(gameObject);
     }
 }

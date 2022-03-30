@@ -58665,8 +58665,8 @@ GameObject:
   - component: {fileID: 1696829119}
   - component: {fileID: 1696829120}
   - component: {fileID: 1696829121}
-  - component: {fileID: 1696829122}
   - component: {fileID: 1696829123}
+  - component: {fileID: 1696829124}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -58815,18 +58815,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 1372213619}
   loadMenu: {fileID: 347106403}
   life: {fileID: 973922959}
---- !u!114 &1696829122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696829115}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d304aa9065ba56c4f94e3d23452130ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1696829123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58857,6 +58845,34 @@ MonoBehaviour:
     woodTowerPositions: []
     gemTowerPositions: []
   hasLoaded: 0
+--- !u!114 &1696829124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696829115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72fabb3020f4cb84aa279207c2e623d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: cannonball
+    prefab: {fileID: 3090800803329551827, guid: 6fbda899f0859164d8db90bccd784b5a,
+      type: 3}
+    size: 10
+    maxSize: 20
+  - tag: bullet
+    prefab: {fileID: 1229504561875624433, guid: 22c7746ec075a2b448acb1e8c7813dcb,
+      type: 3}
+    size: 10
+    maxSize: 20
+  - tag: arrow
+    prefab: {fileID: 8619160181754527093, guid: 9769dd7842086aa42963f847681e5c72,
+      type: 3}
+    size: 5
+    maxSize: 10
 --- !u!1001 &1699600369
 PrefabInstance:
   m_ObjectHideFlags: 0

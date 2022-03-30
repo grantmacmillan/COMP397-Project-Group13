@@ -80,7 +80,10 @@ public class Turret : MonoBehaviour
     private void Fire() {
         FindObjectOfType<Sound_Manager>().Play(audioName);
 
-        GameObject projectileObject = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        //GameObject projectileObject = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+
+        GameObject projectileObject =
+            ObjectPooler.Instance.SpawnFromPool(projectilePrefab.tag, firePoint.position, firePoint.rotation);
 
         Projectile projectile = projectileObject.GetComponent<Projectile>();
 
