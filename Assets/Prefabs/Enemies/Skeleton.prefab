@@ -927,7 +927,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3370351173604324190}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -733.45233, y: -715.7015, z: 5.0480976}
   m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
   m_ConstrainProportionsScale: 0
@@ -938,7 +938,7 @@ Transform:
   - {fileID: 5781408371700929539}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3370351173613699306
 Animator:
   serializedVersion: 4
@@ -1157,22 +1157,22 @@ PrefabInstance:
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.66421926
+      value: -0.9396926
       objectReference: {fileID: 0}
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.24175553
+      value: -0.34202012
       objectReference: {fileID: 0}
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6647067
+      value: -0.00034064052
       objectReference: {fileID: 0}
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.24193375
+      value: 0.00012455507
       objectReference: {fileID: 0}
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
@@ -1192,7 +1192,7 @@ PrefabInstance:
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90.042
+      value: 360.042
       objectReference: {fileID: 0}
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}

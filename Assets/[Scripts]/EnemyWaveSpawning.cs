@@ -113,7 +113,7 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     void SpawnEnemy(int enemy)
     {
-        GameObject enemyObj = (ObjectPooler.Instance.SpawnFromPool(enemiesToSpawn[enemy].name,spawnPoint.position, spawnPoint.rotation));
+        GameObject enemyObj = (ObjectPooler.Instance.SpawnFromPool(enemiesToSpawn[enemy].name,spawnPoint.position, Quaternion.Euler(0,90,0)));
         enemyObj.name = enemiesToSpawn[enemy].name;
         enemiesAlive.Add(enemyObj);
         //enemiesAlive.Add(Instantiate(enemiesToSpawn[enemy], spawnPoint.position, spawnPoint.rotation));

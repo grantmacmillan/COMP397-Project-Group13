@@ -38,9 +38,7 @@ public class Enemy : MonoBehaviour, IPooledObject
         target = WaypointList.waypoints[0];
         currentWaypointIndex = 0;
         gameObject.tag = "Enemy";
-        Vector3 dir = target.position - transform.position;
-        lookRotation = Quaternion.LookRotation(dir);
-        transform.rotation = lookRotation;
+        lookRotation = Quaternion.Euler(0,90,0);
     }
 
     private void Update()
