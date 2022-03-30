@@ -58873,6 +58873,21 @@ MonoBehaviour:
       type: 3}
     size: 5
     maxSize: 10
+  - tag: Skeleton
+    prefab: {fileID: 3370351173604324190, guid: f5ebb52062954c740b7f34855705977b,
+      type: 3}
+    size: 25
+    maxSize: 25
+  - tag: Orc
+    prefab: {fileID: 1090689776012894063, guid: fdb1c6051cf1d664fbc1e37af53520f2,
+      type: 3}
+    size: 20
+    maxSize: 20
+  - tag: Vampire
+    prefab: {fileID: 3218087424204450820, guid: c872650904e3664429bec0bb435b4ead,
+      type: 3}
+    size: 55
+    maxSize: 55
 --- !u!1001 &1699600369
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IPooledObject
 {
     private enum State
     {
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public float health;
     public Image healthBar;
 
-    private float startHealth;
+    public float startHealth;
     private State state;
     private Animator animator;
     private Quaternion lookRotation;
@@ -29,14 +29,18 @@ public class Enemy : MonoBehaviour
     private int lives = 5;
     PlayerLives instance = new();
 
-    private void Start()
+    public void OnObjectSpawn()
     {
-        startHealth = health;
+        health = startHealth;
         state = State.Walk;
         animator = GetComponent<Animator>();
+        healthBar.fillAmount = 1;
         target = WaypointList.waypoints[0];
+        currentWaypointIndex = 0;
+        gameObject.tag = "Enemy";
         Vector3 dir = target.position - transform.position;
         lookRotation = Quaternion.LookRotation(dir);
+        transform.rotation = lookRotation;
     }
 
     private void Update()
@@ -106,8 +110,8 @@ public class Enemy : MonoBehaviour
         FindObjectOfType<Sound_Manager>().Play("MonsterDeath1");
         state = State.Dead;
         animator.SetTrigger("Dead");
-        yield return new WaitForSeconds(4f); 
-        Destroy(gameObject);
+        yield return new WaitForSeconds(4f);
+        ObjectPooler.Instance.poolDictionary[name].Release(gameObject);
     }
 
     public void DestroyEnemy()
@@ -115,7 +119,7 @@ public class Enemy : MonoBehaviour
         lives--;
         FindObjectOfType<PlayerLives>().LoseLife(lives);
         FindObjectOfType<Sound_Manager>().Play("LosingLife");
-        Destroy(gameObject);
+        ObjectPooler.Instance.poolDictionary[name].Release(gameObject);
     }
 
 

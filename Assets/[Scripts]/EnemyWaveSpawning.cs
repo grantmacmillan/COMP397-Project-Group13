@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
 public class EnemyWaveSpawning : MonoBehaviour
 {
@@ -55,15 +56,15 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i < enemiesAlive.Count; i++ )
+       /* for (int i = 0; i < enemiesAlive.Count; i++ )
         {
             if (enemiesAlive[i] == null)
             {
                 enemiesAlive.RemoveAt(i);
             }
-        }
+        }*/
 
-        if (enemiesAlive.Count == 0 && firstRoundStarted == true)
+        if (AreAllEnemiesInactive() && firstRoundStarted == true)
         {
             waveCompletedGold += 1;
             ResourceManager.gold += waveCompletedGold;
@@ -78,6 +79,17 @@ public class EnemyWaveSpawning : MonoBehaviour
             }
         }
 
+    }
+    bool AreAllEnemiesInactive()
+    {
+        foreach (GameObject enemy in enemiesAlive)
+        {
+            if (enemy.activeSelf)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     IEnumerator SpawnWave(Wave wave)
@@ -101,7 +113,10 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     void SpawnEnemy(int enemy)
     {
-        enemiesAlive.Add(Instantiate(enemiesToSpawn[enemy], spawnPoint.position, spawnPoint.rotation));
+        GameObject enemyObj = (ObjectPooler.Instance.SpawnFromPool(enemiesToSpawn[enemy].name,spawnPoint.position, spawnPoint.rotation));
+        enemyObj.name = enemiesToSpawn[enemy].name;
+        enemiesAlive.Add(enemyObj);
+        //enemiesAlive.Add(Instantiate(enemiesToSpawn[enemy], spawnPoint.position, spawnPoint.rotation));
     }
 
     public void StartFirstWave()

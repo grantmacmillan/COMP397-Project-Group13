@@ -975,7 +975,7 @@ MonoBehaviour:
   rotationSpeed: 5
   health: 50
   healthBar: {fileID: 5781408371534615927}
-  lives: 5
+  startHealth: 50
   goldAmount: 1
 --- !u!1 &3370351174250503936
 GameObject:
@@ -1157,22 +1157,22 @@ PrefabInstance:
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9396927
+      value: 0.66421926
       objectReference: {fileID: 0}
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3420201
+      value: 0.24175553
       objectReference: {fileID: 0}
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.6647067
       objectReference: {fileID: 0}
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.24193375
       objectReference: {fileID: 0}
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
@@ -1192,7 +1192,7 @@ PrefabInstance:
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90.042
       objectReference: {fileID: 0}
     - target: {fileID: 5275199868605781161, guid: 306668ccf8821a04bb05bbea5d9fefac,
         type: 3}
