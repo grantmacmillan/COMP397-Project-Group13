@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Node : MonoBehaviour
+public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private GameObject turret;
     public Vector3 positionOffset;
@@ -54,7 +54,7 @@ public class Node : MonoBehaviour
         }
     }
 #endif
-    private void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData data)
     {
 #if UNITY_STANDALONE
         if (EventSystem.current.IsPointerOverGameObject())
@@ -76,7 +76,7 @@ public class Node : MonoBehaviour
         }
     }
 
-    private void OnMouseExit()
+    public void OnPointerExit(PointerEventData data)
     {
         renderer.materials[1].color = originalColor;
         Destroy(radiusObject);
