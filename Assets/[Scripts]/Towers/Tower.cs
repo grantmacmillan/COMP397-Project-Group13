@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Tower
 {
-    public GameObject towerPrefab;
+    public GameObject towerPrefab, placeHolderPrefab;
     public float range;
     public int gold, wood, gem;
 }

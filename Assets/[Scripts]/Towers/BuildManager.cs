@@ -7,7 +7,7 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance; 
     private Tower turretToBuild;
-    private GameObject selectedTile;
+    private GameObject selectedTile, placeholder;
     private Button btn;
     public List<Tower> turrets = new List<Tower>();
 
@@ -39,9 +39,39 @@ public class BuildManager : MonoBehaviour
         selectedTile = tile;
     }
 
+    public GameObject GetTileSelected()
+    {
+        return selectedTile;
+    }
+
     private void BuildTowerOnTile()
     {
+
+        DestroyPlaceholder();
         selectedTile.GetComponent<Node>().BuildTower();
     }
 #endif
+    public void InstantiatePlaceholder()
+    {
+        placeholder = Instantiate(turretToBuild.placeHolderPrefab, transform.position, Quaternion.identity);
+    }
+
+    public void MovePlaceholder(Vector3 pos)
+    {
+        placeholder.transform.position = pos;
+    }
+
+    public void MovePlaceholderToTile(Vector3 pos)
+    {
+        
+    }
+
+    public void DestroyPlaceholder()
+    {
+        if (placeholder != null)
+        {
+            Destroy(placeholder);
+        }
+    }
+
 }

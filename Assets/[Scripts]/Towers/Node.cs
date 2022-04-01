@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
-public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Node : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 {
     private GameObject turret;
     public Vector3 positionOffset;
@@ -66,13 +69,16 @@ public class Node : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 #endif
         if (buildManager.GetTurretToBuild() != null)
         {
-            radiusObject = (GameObject)Instantiate(towerRadiusPrefab, transform.position + new Vector3(0, 0.2f, 0), transform.rotation);
-            radiusObject.transform.localScale = new Vector3(buildManager.GetTurretToBuild().range, radiusObject.transform.localScale.y, buildManager.GetTurretToBuild().range);
-            renderer.materials[1].color = hoverColor;
 #if UNITY_IOS || UNITY_ANDROID
             buildManager.SetTileSelected(this.gameObject);
             btn.gameObject.SetActive(true);
+            buildManager.MovePlaceholder(transform.position + positionOffset);
 #endif
+            radiusObject = (GameObject) Instantiate(towerRadiusPrefab, transform.position + new Vector3(0, 0.2f, 0),
+                transform.rotation);
+            radiusObject.transform.localScale = new Vector3(buildManager.GetTurretToBuild().range,
+                radiusObject.transform.localScale.y, buildManager.GetTurretToBuild().range);
+            renderer.materials[1].color = hoverColor;
         }
     }
 

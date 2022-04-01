@@ -73,8 +73,8 @@ public class Turret : MonoBehaviour
                 fireCooldown = 1f / fireRate;
             }
 
-            fireCooldown -= Time.deltaTime;
         }
+        fireCooldown -= Time.deltaTime;
     }
 
     private void Fire() {

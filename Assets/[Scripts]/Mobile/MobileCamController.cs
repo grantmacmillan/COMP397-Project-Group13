@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 class MobileCamController : MonoBehaviour
 {
@@ -11,6 +13,7 @@ class MobileCamController : MonoBehaviour
     public float CameraLowerHeightBound = 7; //Zoom in
     private Vector2 panRangeX = new Vector2(0, 14);
     private Vector2 panRangeZ = new Vector2(-10, 0);
+    private bool touchStartedOnUI;
 
     private Vector3 cameraStartPosition;
     private void Awake()
@@ -23,7 +26,18 @@ class MobileCamController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.touchCount >= 1 && IsPointerOverUIObject())
+        {
+            touchStartedOnUI = true;
+        }
 
+        if (Input.touchCount == 0)
+        {
+            touchStartedOnUI = false;
+        }
+        Debug.Log(touchStartedOnUI);
+        /*if (IsPointerOverUIObject())
+            return;*/
         //Update Plane
         if (Input.touchCount >= 1)
             Plane.SetNormalAndPosition(transform.up, transform.position);
@@ -32,7 +46,7 @@ class MobileCamController : MonoBehaviour
         var Delta2 = Vector3.zero;
 
         //Scroll (Pan function)
-        if (Input.touchCount >= 1)
+        if (Input.touchCount >= 1 && touchStartedOnUI == false)
         {
             //Get distance camera should travel
             Delta1 = PlanePositionDelta(Input.GetTouch(0)) / DecreaseCameraPanSpeed;
@@ -113,9 +127,40 @@ class MobileCamController : MonoBehaviour
         return Vector3.zero;
     }
 
-    private void OnDrawGizmos()
+    void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, transform.position + transform.up);
+
+        Vector3 position = new Vector3(0,0,0);
+        Plane plane = new Plane(Vector3.up, 0);
+        float distance;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (plane.Raycast(ray, out distance))
+        {
+            position = ray.GetPoint(distance);
+        }
+
+        position.y += 1;
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(position, new Vector3(0.3f,0.3f,0.3f));
+    }
+    private bool IsPointerOverUIObject()
+    {
+        GameObject target;
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        foreach (var result in results)
+        {
+            target = result.gameObject;
+            
+            if (target.layer == 5)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 #endif
 }

@@ -31943,7 +31943,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 191
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -45994,7 +45994,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331174788}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -46110,7 +46110,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 993712492}
+        - m_Target: {fileID: 1655691229}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -46126,7 +46126,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 993712492}
+        - m_Target: {fileID: 1655691229}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -46136,6 +46136,38 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1574937737}
+          m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+          m_MethodName: PurchaseBalistaTower
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1574937737}
+          m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+          m_MethodName: StopMoveImage
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MoveImage
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1001 &1332780341
@@ -49180,7 +49212,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398296247}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -49296,7 +49328,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 143203905}
+        - m_Target: {fileID: 1655691229}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -49312,7 +49344,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 143203905}
+        - m_Target: {fileID: 1655691229}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -49322,6 +49354,38 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1574937737}
+          m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+          m_MethodName: PurchaseBlasterTower
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1574937737}
+          m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+          m_MethodName: StopMoveImage
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MoveImage
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1001 &1400925119
@@ -49468,7 +49532,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406479273}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -49584,7 +49648,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 914795919}
+        - m_Target: {fileID: 1655691229}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -49600,7 +49664,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 914795919}
+        - m_Target: {fileID: 1655691229}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -49610,6 +49674,38 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1574937737}
+          m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+          m_MethodName: PurchaseGemTower
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1574937737}
+          m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+          m_MethodName: StopMoveImage
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MoveImage
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1001 &1410285366
@@ -54965,41 +55061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2aecf069ff4d440bba436d09677555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannonTower:
-    towerPrefab: {fileID: 5867045146055092984, guid: d66ed549f7d7d224087a181ce64782b9,
-      type: 3}
-    range: 0
-    gold: 10
-    wood: 0
-    gem: 0
-  balistaTower:
-    towerPrefab: {fileID: 5867045146055092984, guid: 4fbe262cacb84e443b4a9608d7761980,
-      type: 3}
-    range: 0
-    gold: 30
-    wood: 30
-    gem: 0
-  blasterTower:
-    towerPrefab: {fileID: 5867045146055092984, guid: 317c5e8ca78c08d489f1c0d400def096,
-      type: 3}
-    range: 0
-    gold: 65
-    wood: 50
-    gem: 5
-  woodTower:
-    towerPrefab: {fileID: 8829403986137933680, guid: 11c0e068f1423714b95ac5de5248a0d6,
-      type: 3}
-    range: 0
-    gold: 6
-    wood: 0
-    gem: 0
-  gemTower:
-    towerPrefab: {fileID: 746143791343211029, guid: dd0c9a87032cb8a4e802a7bfc0eea5fc,
-      type: 3}
-    range: 0
-    gold: 40
-    wood: 20
-    gem: 0
 --- !u!1 &1582897856
 GameObject:
   m_ObjectHideFlags: 0
@@ -58706,11 +58767,15 @@ MonoBehaviour:
   turrets:
   - towerPrefab: {fileID: 5867045146055092984, guid: d66ed549f7d7d224087a181ce64782b9,
       type: 3}
+    placeHolderPrefab: {fileID: 5867045146055092984, guid: 0db7f61d14c25d747a284e12434cf889,
+      type: 3}
     range: 5.25
     gold: 10
     wood: 0
     gem: 0
   - towerPrefab: {fileID: 5867045146055092984, guid: 4fbe262cacb84e443b4a9608d7761980,
+      type: 3}
+    placeHolderPrefab: {fileID: 5867045146055092984, guid: 411702c8daf8aa5488bb8cb468a4b7ac,
       type: 3}
     range: 12
     gold: 30
@@ -58718,17 +58783,23 @@ MonoBehaviour:
     gem: 0
   - towerPrefab: {fileID: 5867045146055092984, guid: 317c5e8ca78c08d489f1c0d400def096,
       type: 3}
+    placeHolderPrefab: {fileID: 5867045146055092984, guid: 565a2066f0ae2124385e2ee31ad54207,
+      type: 3}
     range: 11
     gold: 65
     wood: 50
     gem: 5
   - towerPrefab: {fileID: 8829403986137933680, guid: 11c0e068f1423714b95ac5de5248a0d6,
       type: 3}
+    placeHolderPrefab: {fileID: 8829403986137933680, guid: 8b6bc68994944ce43b4f4f734f7ada15,
+      type: 3}
     range: 0
     gold: 6
     wood: 0
     gem: 0
   - towerPrefab: {fileID: 746143791343211029, guid: dd0c9a87032cb8a4e802a7bfc0eea5fc,
+      type: 3}
+    placeHolderPrefab: {fileID: 746143791343211029, guid: 38fb51388462f2c4ca5291fff126f394,
       type: 3}
     range: 0
     gold: 40
@@ -64221,7 +64292,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850007488}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -64337,7 +64408,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1741599085}
+        - m_Target: {fileID: 1655691229}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -64353,7 +64424,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1741599085}
+        - m_Target: {fileID: 1655691229}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -64363,6 +64434,38 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1574937737}
+          m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+          m_MethodName: PurchaseWoodTower
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1574937737}
+          m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+          m_MethodName: StopMoveImage
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MoveImage
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1001 &1854355335
@@ -65955,7 +66058,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889165286}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -66097,6 +66200,38 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1574937737}
+          m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+          m_MethodName: PurchaseCannonTower
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 14
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1574937737}
+          m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+          m_MethodName: StopMoveImage
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: MoveImage
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1001 &1889691110
