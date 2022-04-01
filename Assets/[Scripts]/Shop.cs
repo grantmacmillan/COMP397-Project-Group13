@@ -7,16 +7,19 @@ using UnityEngine.PlayerLoop;
 public class Shop : MonoBehaviour
 {
     private BuildManager buildManager;
+    private CanvasGroup canvasGroup;
 
     void Start()
     {
         buildManager = BuildManager.instance;
+        canvasGroup = GetComponent<CanvasGroup>();
     }
     public void PurchaseCannonTower() {
         buildManager.SetTurretToBuild(buildManager.turrets[0]);
         buildManager.SetTileSelected(null);
         buildManager.DestroyPlaceholder();
         buildManager.InstantiatePlaceholder();
+        canvasGroup.blocksRaycasts = false;
         StartCoroutine("MoveImage");
     }
     public void PurchaseBalistaTower() {
@@ -67,6 +70,7 @@ public class Shop : MonoBehaviour
     private IEnumerator DestroyAfterDelay()
     {
         yield return new WaitForSeconds(0.05f);
+        canvasGroup.blocksRaycasts = true;
         if (buildManager.GetTileSelected() == null)
         {
             buildManager.DestroyPlaceholder();

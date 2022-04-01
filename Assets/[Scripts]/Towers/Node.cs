@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 
-public class Node : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
+public class Node : MonoBehaviour, IDropHandler
 {
     private GameObject turret;
     public Vector3 positionOffset;
@@ -57,15 +57,16 @@ public class Node : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
         }
     }
 #endif
-    public void OnPointerEnter(PointerEventData data)
+    public void OnDrop(PointerEventData data)
     {
+        Debug.Log("dropped on node");
 #if UNITY_STANDALONE
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 #endif
 #if UNITY_IOS || UNITY_ANDROID
-        if (EventSystem.current.IsPointerOverGameObject(0))
-            return;
+       /* if (EventSystem.current.IsPointerOverGameObject(0))
+            return;*/
 #endif
         if (buildManager.GetTurretToBuild() != null)
         {
@@ -74,19 +75,20 @@ public class Node : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
             btn.gameObject.SetActive(true);
             buildManager.MovePlaceholder(transform.position + positionOffset);
 #endif
-            radiusObject = (GameObject) Instantiate(towerRadiusPrefab, transform.position + new Vector3(0, 0.2f, 0),
+            /*radiusObject = (GameObject) Instantiate(towerRadiusPrefab, transform.position + new Vector3(0, 0.2f, 0),
                 transform.rotation);
             radiusObject.transform.localScale = new Vector3(buildManager.GetTurretToBuild().range,
                 radiusObject.transform.localScale.y, buildManager.GetTurretToBuild().range);
-            renderer.materials[1].color = hoverColor;
+            renderer.materials[1].color = hoverColor;*/
         }
     }
 
-    public void OnPointerExit(PointerEventData data)
+    /*public void OnPointerExit(PointerEventData data)
     {
+        Debug.Log("pointerexit");
         renderer.materials[1].color = originalColor;
         Destroy(radiusObject);
-    }
+    }*/
 #if UNITY_IOS || UNITY_ANDROID
     public void BuildTower()
     {
