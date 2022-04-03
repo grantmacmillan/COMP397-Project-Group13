@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5362399613416672045}
   - component: {fileID: 8236611374710202785}
   - component: {fileID: -133658728636643901}
+  - component: {fileID: 3110196758352533634}
   m_Layer: 0
   m_Name: Blaster
   m_TagString: Untagged
@@ -153,6 +154,22 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1229504561875624433, guid: 22c7746ec075a2b448acb1e8c7813dcb,
     type: 3}
   firePoint: {fileID: 7898860010769345136}
+--- !u!111 &3110196758352533634
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5867045146055092984}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 36f596846251d5c459fa5a5ca0ffd50a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 36f596846251d5c459fa5a5ca0ffd50a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &4171006062309202162
 PrefabInstance:
   m_ObjectHideFlags: 0

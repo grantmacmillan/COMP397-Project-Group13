@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5362399613416672045}
   - component: {fileID: 8236611374710202785}
   - component: {fileID: -133658728636643901}
+  - component: {fileID: 5891114721644650028}
   m_Layer: 0
   m_Name: Balista
   m_TagString: Untagged
@@ -153,6 +154,22 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8619160181754527093, guid: 9769dd7842086aa42963f847681e5c72,
     type: 3}
   firePoint: {fileID: 7898860010769345136}
+--- !u!111 &5891114721644650028
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5867045146055092984}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 750a0f130bbf5ad46ac9c0787340228c, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 750a0f130bbf5ad46ac9c0787340228c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &3835746698173995483
 PrefabInstance:
   m_ObjectHideFlags: 0

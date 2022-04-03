@@ -10,9 +10,14 @@ public class ResourceManager : MonoBehaviour
     public static int gold, wood, gems, waveNum, totalWaves, currentLives;
     public int startingGold = 999, startingWood = 999, startingGems = 999;
     public GameObject pauseMenuUI;
+    public static ResourceManager Instance;
 
     [SerializeField] private GameObject cannonPrefab, balistaPrefab, blasterPrefab, woodPrefab, gemPrefab;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     //Loads Or Start A New Game
     void Start() {
         if (SaveManager.instance.hasLoaded)
@@ -112,4 +117,18 @@ public class ResourceManager : MonoBehaviour
             else
                 Instantiate(obj, new Vector3(positions[3 * i], positions[1 + (3 * i)], positions[2 + (3 * i)]), Quaternion.identity);
     }
+
+    public int GetGold()
+    {
+        return gold;
+    }
+    public int GetWood()
+    {
+        return wood;
+    }
+    public int GetGems()
+    {
+        return gems;
+    }
+
 }
