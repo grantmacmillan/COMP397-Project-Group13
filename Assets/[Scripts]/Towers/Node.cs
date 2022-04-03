@@ -104,6 +104,7 @@ public class Node : MonoBehaviour, IDropHandler
             Tower tower = BuildManager.instance.GetTurretToBuild();
             if (ResourceManager.Purchase(tower.gold, tower.wood, tower.gem))
             {
+                FindObjectOfType<Sound_Manager>().Play("Build");
                 GameObject turretToBuild = tower.towerPrefab;
                 turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset,
                     transform.rotation);
