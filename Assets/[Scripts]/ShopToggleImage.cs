@@ -25,10 +25,12 @@ public class ShopToggleImage : MonoBehaviour
     {
         if (image.sprite == chestOpen)
         {
+            FindObjectOfType<Sound_Manager>().Play("ShopButton");
             image.sprite = chestClosed;
         }
         else
         {
+            FindObjectOfType<Sound_Manager>().Play("ShopButton");
             image.sprite = chestOpen;
         }
     }

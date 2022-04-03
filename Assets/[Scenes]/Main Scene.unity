@@ -71990,12 +71990,12 @@ PrefabInstance:
     - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
       propertyPath: sounds.Array.data[8].volume
-      value: 0.2
+      value: 0.306
       objectReference: {fileID: 0}
     - target: {fileID: 7642915804131981618, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
       propertyPath: sounds.Array.data[9].volume
-      value: 0.2
+      value: 0.778
       objectReference: {fileID: 0}
     - target: {fileID: 7642915804131981619, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
