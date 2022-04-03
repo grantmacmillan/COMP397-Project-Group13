@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour, IPooledObject
         target = WaypointList.waypoints[0];
         currentWaypointIndex = 0;
         gameObject.tag = "Enemy";
-        lookRotation = Quaternion.Euler(0,90,0);
+        lookRotation = Quaternion.Euler(0, 90, 0);
     }
 
     private void Update()
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour, IPooledObject
                 animator.SetFloat("movementSpeed", movementSpeed);
                 break;
             case State.Run:
-                animator.SetFloat("movementSpeed", movementSpeed*2);
+                animator.SetFloat("movementSpeed", movementSpeed * 2);
                 break;
             case State.Dead:
                 gameObject.tag = "Dead";
@@ -105,6 +105,7 @@ public class Enemy : MonoBehaviour, IPooledObject
     private IEnumerator KillEnemy()
     {
         ResourceManager.gold += goldAmount;
+        SaveManager.instance.activeSave.tempGold += goldAmount;
         FindObjectOfType<Sound_Manager>().Play("MonsterDeath1");
         state = State.Dead;
         animator.SetTrigger("Dead");

@@ -7,6 +7,9 @@ using Object = UnityEngine.Object;
 
 public class EnemyWaveSpawning : MonoBehaviour
 {
+    public static bool isFirstSave = false;
+    public static bool isWaveCompleted = false;
+
     public Transform enemyPrefab;
     public Transform spawnPoint;
     public GameObject[] enemiesToSpawn;
@@ -56,30 +59,61 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     void Update()
     {
-       /* for (int i = 0; i < enemiesAlive.Count; i++ )
-        {
-            if (enemiesAlive[i] == null)
-            {
-                enemiesAlive.RemoveAt(i);
-            }
-        }*/
+        /* for (int i = 0; i < enemiesAlive.Count; i++ )
+         {
+             if (enemiesAlive[i] == null)
+             {
+                 enemiesAlive.RemoveAt(i);
+             }
+         }*/
 
+        //Beginning of a new wave
         if (AreAllEnemiesInactive() && firstRoundStarted == true)
         {
+
             waveCompletedGold += 1;
             ResourceManager.gold += waveCompletedGold;
             ResourceManager.waveNum++;
             waveNum++;
-            
-            if (waveNum < ResourceManager.totalWaves) {
+
+            //Transfert temporary date to permanent data
+            SaveManager.instance.activeSave.tempGold += waveCompletedGold;
+            SaveManager.instance.activeSave.goldAmount += SaveManager.instance.activeSave.tempGold;
+            SaveManager.instance.activeSave.tempGold = 0;
+            SaveManager.instance.activeSave.gemAmount += SaveManager.instance.activeSave.tempGem;
+            SaveManager.instance.activeSave.tempGem = 0;
+            SaveManager.instance.activeSave.woodAmount += SaveManager.instance.activeSave.tempWood;
+            SaveManager.instance.activeSave.tempWood = 0;
+
+            for (int i = 0; i < SaveManager.instance.activeSave.tempWoodTowerCount * 3; i++)
+                SaveManager.instance.activeSave.woodTowerPositions.Add(SaveManager.instance.activeSave.tempWoodTowerPositions[i]);
+
+            for (int i = 0; i < SaveManager.instance.activeSave.tempGemTowerCount * 3; i++)
+                SaveManager.instance.activeSave.gemTowerPositions.Add(SaveManager.instance.activeSave.tempGemTowerPositions[i]);
+
+            for (int i = 0; i < SaveManager.instance.activeSave.tempCannonCount * 3; i++)
+                SaveManager.instance.activeSave.cannonPositions.Add(SaveManager.instance.activeSave.tempCannonPositions[i]);
+
+            for (int i = 0; i < SaveManager.instance.activeSave.tempBalistaCount * 3; i++)
+                SaveManager.instance.activeSave.balistaPositions.Add(SaveManager.instance.activeSave.tempBalistaPositions[i]);
+
+            for (int i = 0; i < SaveManager.instance.activeSave.tempBlasterCount * 3; i++)
+                SaveManager.instance.activeSave.blasterPositions.Add(SaveManager.instance.activeSave.tempBlasterPositions[i]);
+
+            ResetValues();
+
+            if (waveNum < ResourceManager.totalWaves)
+            {
                 //else win game
                 StartCoroutine(SpawnWave(waves[waveNum]));
-            } else {
+            }
+            else
+            {
                 SceneManager.LoadScene("Game Won");
             }
         }
-
     }
+
     bool AreAllEnemiesInactive()
     {
         foreach (GameObject enemy in enemiesAlive)
@@ -89,6 +123,7 @@ public class EnemyWaveSpawning : MonoBehaviour
                 return false;
             }
         }
+        isWaveCompleted = true;
         return true;
     }
 
@@ -113,7 +148,7 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     void SpawnEnemy(int enemy)
     {
-        GameObject enemyObj = (ObjectPooler.Instance.SpawnFromPool(enemiesToSpawn[enemy].name,spawnPoint.position, Quaternion.Euler(0,90,0)));
+        GameObject enemyObj = (ObjectPooler.Instance.SpawnFromPool(enemiesToSpawn[enemy].name, spawnPoint.position, Quaternion.Euler(0, 90, 0)));
         enemyObj.name = enemiesToSpawn[enemy].name;
         enemiesAlive.Add(enemyObj);
         //enemiesAlive.Add(Instantiate(enemiesToSpawn[enemy], spawnPoint.position, spawnPoint.rotation));
@@ -121,13 +156,41 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     public void StartFirstWave()
     {
-        if (ResourceManager.waveNum <= 1) {
+        if (ResourceManager.waveNum <= 1)
+        {
             StartCoroutine(SpawnWave(waves[0]));
             firstRoundStarted = true;
         }
-        else {
+        else
+        {
             StartCoroutine(SpawnWave(waves[ResourceManager.waveNum - 1]));
             firstRoundStarted = true;
         }
+    }
+
+    void ResetValues()
+    {
+        SaveManager.instance.activeSave.blasterCount += SaveManager.instance.activeSave.tempBlasterCount;
+        SaveManager.instance.activeSave.tempBlasterCount = 0;
+        SaveManager.instance.activeSave.tempBlasterPositions.Clear();
+
+        SaveManager.instance.activeSave.balistaCount += SaveManager.instance.activeSave.tempBalistaCount;
+        SaveManager.instance.activeSave.tempBalistaCount = 0;
+        SaveManager.instance.activeSave.tempBalistaPositions.Clear();
+
+        SaveManager.instance.activeSave.cannonCount += SaveManager.instance.activeSave.tempCannonCount;
+        SaveManager.instance.activeSave.tempCannonCount = 0;
+        SaveManager.instance.activeSave.tempCannonPositions.Clear();
+
+        SaveManager.instance.activeSave.gemTowerCount += SaveManager.instance.activeSave.tempGemTowerCount;
+        SaveManager.instance.activeSave.tempGemTowerCount = 0;
+        SaveManager.instance.activeSave.tempGemTowerPositions.Clear();
+
+        SaveManager.instance.activeSave.woodTowerCount += SaveManager.instance.activeSave.tempWoodTowerCount;
+        SaveManager.instance.activeSave.tempWoodTowerCount = 0;
+        SaveManager.instance.activeSave.tempWoodTowerPositions.Clear();
+
+
+        isWaveCompleted = false;
     }
 }

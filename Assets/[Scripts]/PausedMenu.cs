@@ -44,7 +44,9 @@ public class PausedMenu : MonoBehaviour
         loadMenu.SetActive(true);
     }
 
-    public void SaveMenu() {
+    public void SaveMenu()
+    {
+        EnemyWaveSpawning.isFirstSave = false;
         SaveManager.instance.Save();
     }
 

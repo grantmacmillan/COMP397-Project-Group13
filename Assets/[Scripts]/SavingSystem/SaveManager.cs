@@ -11,12 +11,13 @@ public class SaveManager : MonoBehaviour
     public bool hasLoaded;
 
     //Singleton
-    private void Awake() {
+    private void Awake()
+    {
         instance = this;
         this.activeSave.saveName = PlayerPrefs.GetString("Save Name");
         Debug.Log("Active Save Name: " + this.activeSave.saveName);
 
-        if (PlayerPrefs.GetInt("Has Loaded") == 1) 
+        if (PlayerPrefs.GetInt("Has Loaded") == 1)
             Load();
 
         if (PlayerPrefs.GetInt("Has Loaded") == 0)
@@ -24,7 +25,10 @@ public class SaveManager : MonoBehaviour
     }
 
     //Saving a game state
-    public void Save() {
+    public void Save()
+    {
+        //string pathName = Directory.GetCurrentDirectory();
+        //string dataPath = pathName + "\\Assets\\Data";
         string pathName = Application.persistentDataPath;
 
         var serializer = new XmlSerializer(typeof(Data));
@@ -36,10 +40,12 @@ public class SaveManager : MonoBehaviour
     }
 
     //Loading a game state
-    public void Load() {
+    public void Load()
+    {
         string pathName = Application.persistentDataPath;
 
-        if (File.Exists(pathName + "\\" + activeSave.saveName + ".txt")) {
+        if (File.Exists(pathName + "\\" + activeSave.saveName + ".txt"))
+        {
             var serializer = new XmlSerializer(typeof(Data));
             var stream = new FileStream(pathName + "\\" + activeSave.saveName + ".txt", FileMode.Open);
 
@@ -51,10 +57,12 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public void ResetData() {
-        string pathName = Application.persistentDataPath; 
+    public void ResetData()
+    {
+        string pathName = Application.persistentDataPath;
 
-        if (File.Exists(pathName + "\\" + activeSave.saveName + ".txt")) {
+        if (File.Exists(pathName + "\\" + activeSave.saveName + ".txt"))
+        {
             hasLoaded = false;
             Debug.Log("Data reset complete!");
         }
@@ -62,9 +70,16 @@ public class SaveManager : MonoBehaviour
 }
 
 [System.Serializable]
-public class Data {
+public class Data
+{
     //Game name
     public string saveName;
+
+    //Temporary gold checkpoint
+    public int tempGold;
+    public int tempWood;
+    public int tempGem;
+
 
     //Resource information
     public int woodAmount;
@@ -80,10 +95,23 @@ public class Data {
     public int woodTowerCount;
     public int gemTowerCount;
 
+    public int tempCannonCount;
+    public int tempBalistaCount;
+    public int tempBlasterCount;
+    public int tempWoodTowerCount;
+    public int tempGemTowerCount;
+
     //Tower Positions
     public List<float> cannonPositions;
     public List<float> balistaPositions;
     public List<float> blasterPositions;
     public List<float> woodTowerPositions;
     public List<float> gemTowerPositions;
+
+    //Temp towers
+    public List<float> tempCannonPositions;
+    public List<float> tempBalistaPositions;
+    public List<float> tempBlasterPositions;
+    public List<float> tempWoodTowerPositions;
+    public List<float> tempGemTowerPositions;
 }

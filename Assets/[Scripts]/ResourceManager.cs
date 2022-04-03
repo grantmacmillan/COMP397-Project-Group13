@@ -19,9 +19,27 @@ public class ResourceManager : MonoBehaviour
         Instance = this;
     }
     //Loads Or Start A New Game
-    void Start() {
+    void Start()
+    {
         if (SaveManager.instance.hasLoaded)
         {
+            //Restart Temporary variables Count
+            SaveManager.instance.activeSave.tempGold = 0;
+            SaveManager.instance.activeSave.tempWood = 0;
+            SaveManager.instance.activeSave.tempGem = 0;
+
+            SaveManager.instance.activeSave.tempCannonPositions.Clear();
+            SaveManager.instance.activeSave.tempBlasterPositions.Clear();
+            SaveManager.instance.activeSave.tempBalistaPositions.Clear();
+            SaveManager.instance.activeSave.tempWoodTowerPositions.Clear();
+            SaveManager.instance.activeSave.tempGemTowerPositions.Clear();
+
+            SaveManager.instance.activeSave.tempBlasterCount = 0;
+            SaveManager.instance.activeSave.tempBalistaCount = 0;
+            SaveManager.instance.activeSave.tempCannonCount = 0;
+            SaveManager.instance.activeSave.tempWoodTowerCount = 0;
+            SaveManager.instance.activeSave.tempGemTowerCount = 0;
+
             //Loading gold
             int loadedGold = SaveManager.instance.activeSave.goldAmount;
             goldText.text = loadedGold.ToString();
@@ -48,6 +66,8 @@ public class ResourceManager : MonoBehaviour
             livesText.text = loadedLives.ToString();
             currentLives = loadedLives;
 
+
+            Debug.Log("Cannon count: " + SaveManager.instance.activeSave.cannonCount);
             //Instantiating turrets
             //CANNON
             InstantiateTowers(SaveManager.instance.activeSave.cannonCount, SaveManager.instance.activeSave.cannonPositions, cannonPrefab);
@@ -67,8 +87,27 @@ public class ResourceManager : MonoBehaviour
             //Resetting loading state
             SaveManager.instance.hasLoaded = false;
         }
-        else {
+        else
+        {
+            EnemyWaveSpawning.isFirstSave = true;
+
             //If there is nothing to load
+            SaveManager.instance.activeSave.tempGold = 0;
+            SaveManager.instance.activeSave.tempWood = 0;
+            SaveManager.instance.activeSave.tempGem = 0;
+
+            SaveManager.instance.activeSave.tempCannonPositions.Clear();
+            SaveManager.instance.activeSave.tempBlasterPositions.Clear();
+            SaveManager.instance.activeSave.tempBalistaPositions.Clear();
+            SaveManager.instance.activeSave.tempWoodTowerPositions.Clear();
+            SaveManager.instance.activeSave.tempGemTowerPositions.Clear();
+
+            SaveManager.instance.activeSave.tempBlasterCount = 0;
+            SaveManager.instance.activeSave.tempBalistaCount = 0;
+            SaveManager.instance.activeSave.tempCannonCount = 0;
+            SaveManager.instance.activeSave.tempWoodTowerCount = 0;
+            SaveManager.instance.activeSave.tempGemTowerCount = 0;
+
             gold = startingGold;
             SaveManager.instance.activeSave.goldAmount = gold;
 
@@ -83,34 +122,49 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
-    public static bool Purchase(int g, int w, int gem) {
-        if (g <= gold && w <= wood && gem <= gems) {
+    public static bool Purchase(int g, int w, int gem)
+    {
+        if (EnemyWaveSpawning.isFirstSave && g <= gold && w <= wood && gem <= gems)
+        {
             gold -= g;
             wood -= w;
             gems -= gem;
+            SaveManager.instance.activeSave.goldAmount = gold;
+            SaveManager.instance.activeSave.woodAmount = wood;
+            SaveManager.instance.activeSave.gemAmount = gems;
+            return true;
+        }
+
+        if (!EnemyWaveSpawning.isFirstSave && g <= gold && w <= wood && gem <= gems)
+        {
+            gold -= g;
+            wood -= w;
+            gems -= gem;
+            SaveManager.instance.activeSave.tempGold -= g;
+            SaveManager.instance.activeSave.tempWood -= w;
+            SaveManager.instance.activeSave.tempGem -= gem;
             return true;
         }
         return false;
     }
 
-    void Update() {
+    void Update()
+    {
         goldText.text = gold.ToString();
         woodText.text = wood.ToString();
         gemsText.text = gems.ToString();
 
         //Updating the SaveManager's numbers:
-        SaveManager.instance.activeSave.goldAmount = gold;
-        SaveManager.instance.activeSave.woodAmount = wood;
-        SaveManager.instance.activeSave.gemAmount = gems;
         SaveManager.instance.activeSave.livesAmount = PlayerLives.currentLives;
         SaveManager.instance.activeSave.waveNumber = waveNum;
-        
+
         //waveNum++;
         waveText.text = "Wave: " + waveNum.ToString() + "/" + totalWaves.ToString();
     }
 
     //Instantiates Towers
-    void InstantiateTowers(float count, List<float> positions, GameObject obj) {
+    void InstantiateTowers(float count, List<float> positions, GameObject obj)
+    {
         for (int i = 0; i < count; i++)
             if (i == 0)
                 Instantiate(obj, new Vector3(positions[0], positions[1], positions[2]), Quaternion.identity);

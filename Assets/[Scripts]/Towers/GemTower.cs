@@ -7,8 +7,21 @@ public class GemTower : MonoBehaviour
     private int collectionTime = 30;
 
     //Records position and count of gem towers
-    void Awake() {
-        if (this.name.StartsWith("Gem") && !SaveManager.instance.hasLoaded) {
+    void Awake()
+    {
+        if (this.name.StartsWith("Gem") && !SaveManager.instance.hasLoaded && EnemyWaveSpawning.isFirstSave)
+        {
+            //Adds to save data
+            SaveManager.instance.activeSave.tempGemTowerPositions.Add(this.transform.position.x);
+            SaveManager.instance.activeSave.tempGemTowerPositions.Add(this.transform.position.y);
+            SaveManager.instance.activeSave.tempGemTowerPositions.Add(this.transform.position.z);
+
+            //Counts the number of cannon turrets placed
+            SaveManager.instance.activeSave.tempGemTowerCount++;
+        }
+
+        if (this.name.StartsWith("Gem") && !SaveManager.instance.hasLoaded && !EnemyWaveSpawning.isFirstSave)
+        {
             //Adds to save data
             SaveManager.instance.activeSave.gemTowerPositions.Add(this.transform.position.x);
             SaveManager.instance.activeSave.gemTowerPositions.Add(this.transform.position.y);
