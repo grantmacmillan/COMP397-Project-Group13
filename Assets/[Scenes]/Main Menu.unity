@@ -2981,6 +2981,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeSave:
     saveName: 
+    tempGold: 0
+    tempWood: 0
+    tempGem: 0
     woodAmount: 0
     gemAmount: 0
     goldAmount: 0
@@ -2991,11 +2994,21 @@ MonoBehaviour:
     blasterCount: 0
     woodTowerCount: 0
     gemTowerCount: 0
+    tempCannonCount: 0
+    tempBalistaCount: 0
+    tempBlasterCount: 0
+    tempWoodTowerCount: 0
+    tempGemTowerCount: 0
     cannonPositions: []
     balistaPositions: []
     blasterPositions: []
     woodTowerPositions: []
     gemTowerPositions: []
+    tempCannonPositions: []
+    tempBalistaPositions: []
+    tempBlasterPositions: []
+    tempWoodTowerPositions: []
+    tempGemTowerPositions: []
   hasLoaded: 0
 --- !u!4 &1036317215
 Transform:
@@ -5362,8 +5375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.7965, y: -1.0007}
-  m_SizeDelta: {x: 82.2159, y: 81.6423}
+  m_AnchoredPosition: {x: 39.2709, y: -15.7892}
+  m_SizeDelta: {x: 83.5943, y: 83.0111}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2119273747
 MonoBehaviour:

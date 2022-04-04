@@ -35,10 +35,6 @@ class MobileCamController : MonoBehaviour
         {
             touchStartedOnUI = false;
         }
-        Debug.Log(touchStartedOnUI);
-        /*if (IsPointerOverUIObject())
-            return;*/
-        //Update Plane
         if (Input.touchCount >= 1)
             Plane.SetNormalAndPosition(transform.up, transform.position);
 
