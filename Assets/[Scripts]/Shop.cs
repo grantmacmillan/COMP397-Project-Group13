@@ -62,7 +62,7 @@ public class Shop : MonoBehaviour
 
     public void StopMoveImage()
     {
-        Debug.Log("drag ended");
+        //Debug.Log("drag ended");
         StopCoroutine("MoveImage");
         StartCoroutine("DestroyAfterDelay");
     }
@@ -92,7 +92,7 @@ public class Shop : MonoBehaviour
 
             position.y = 0.2f;
             buildManager.MovePlaceholder(position);
-            Debug.Log("Dragging");
+            //Debug.Log("Dragging");
             yield return new WaitForFixedUpdate();
         }
     }

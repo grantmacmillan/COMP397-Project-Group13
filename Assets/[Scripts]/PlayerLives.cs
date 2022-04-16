@@ -22,11 +22,6 @@ public class PlayerLives : MonoBehaviour
         livesText.text = currentLives.ToString();
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void LoseLife(int lives)
     {
         //Debug.Log("lost a life");
@@ -54,7 +49,7 @@ public class PlayerLives : MonoBehaviour
 
     public void loadCurrentLives(int lives)
     {
-        Debug.Log("Call Current lives function");
+        //Debug.Log("Call Current lives function");
         currentLives =lives;
         livesText.text = currentLives.ToString();
     }

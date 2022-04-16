@@ -2,8 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-class MobileCamController : MonoBehaviour
-{
+class MobileCamController : MonoBehaviour {
 #if UNITY_IOS || UNITY_ANDROID
     public Camera Camera;
     public bool Rotate;
@@ -16,16 +15,14 @@ class MobileCamController : MonoBehaviour
     private bool touchStartedOnUI;
 
     private Vector3 cameraStartPosition;
-    private void Awake()
-    {
+    private void Awake() {
         if (Camera == null)
             Camera = Camera.main;
 
         cameraStartPosition = Camera.transform.position;
     }
 
-    private void Update()
-    {
+    private void Update() {
         if (Input.touchCount >= 1 && IsPointerOverUIObject())
         {
             touchStartedOnUI = true;

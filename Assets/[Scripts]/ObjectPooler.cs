@@ -52,7 +52,7 @@ public class ObjectPooler : MonoBehaviour
     {
         if (!poolDictionary.ContainsKey(tag))
         {
-            Debug.Log(tag + " not found");
+            //Debug.Log(tag + " not found");
             return null;
         }
         GameObject objectToSpawn = poolDictionary[tag].Get();

@@ -27,16 +27,12 @@ public class SaveManager : MonoBehaviour
     //Saving a game state
     public void Save()
     {
-        //string pathName = Directory.GetCurrentDirectory();
-        //string dataPath = pathName + "\\Assets\\Data";
         string pathName = Application.persistentDataPath;
 
         var serializer = new XmlSerializer(typeof(Data));
         var stream = new FileStream(pathName + "\\" + activeSave.saveName + ".txt", FileMode.Create);
         serializer.Serialize(stream, activeSave);
         stream.Close();
-
-        Debug.Log("Saved");
     }
 
     //Loading a game state
@@ -53,7 +49,6 @@ public class SaveManager : MonoBehaviour
             stream.Close();
 
             hasLoaded = true;
-            Debug.Log("Loaded");
         }
     }
 
@@ -64,7 +59,6 @@ public class SaveManager : MonoBehaviour
         if (File.Exists(pathName + "\\" + activeSave.saveName + ".txt"))
         {
             hasLoaded = false;
-            Debug.Log("Data reset complete!");
         }
     }
 }

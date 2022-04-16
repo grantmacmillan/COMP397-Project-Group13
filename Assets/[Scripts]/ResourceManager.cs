@@ -24,21 +24,7 @@ public class ResourceManager : MonoBehaviour
         if (SaveManager.instance.hasLoaded)
         {
             //Restart Temporary variables Count
-            SaveManager.instance.activeSave.tempGold = 0;
-            SaveManager.instance.activeSave.tempWood = 0;
-            SaveManager.instance.activeSave.tempGem = 0;
-
-            SaveManager.instance.activeSave.tempCannonPositions.Clear();
-            SaveManager.instance.activeSave.tempBlasterPositions.Clear();
-            SaveManager.instance.activeSave.tempBalistaPositions.Clear();
-            SaveManager.instance.activeSave.tempWoodTowerPositions.Clear();
-            SaveManager.instance.activeSave.tempGemTowerPositions.Clear();
-
-            SaveManager.instance.activeSave.tempBlasterCount = 0;
-            SaveManager.instance.activeSave.tempBalistaCount = 0;
-            SaveManager.instance.activeSave.tempCannonCount = 0;
-            SaveManager.instance.activeSave.tempWoodTowerCount = 0;
-            SaveManager.instance.activeSave.tempGemTowerCount = 0;
+            ResetValues();
 
             //Loading gold
             int loadedGold = SaveManager.instance.activeSave.goldAmount;
@@ -59,15 +45,12 @@ public class ResourceManager : MonoBehaviour
             int loadedWaveNumber = SaveManager.instance.activeSave.waveNumber;
             waveText.text = loadedWaveNumber.ToString();
             waveNum = loadedWaveNumber;
-            Debug.Log("Resource Manager wave number: " + waveNum);
 
             //Loading Lives
             int loadedLives = SaveManager.instance.activeSave.livesAmount;
             livesText.text = loadedLives.ToString();
             currentLives = loadedLives;
 
-
-            Debug.Log("Cannon count: " + SaveManager.instance.activeSave.cannonCount);
             //Instantiating turrets
             //CANNON
             InstantiateTowers(SaveManager.instance.activeSave.cannonCount, SaveManager.instance.activeSave.cannonPositions, cannonPrefab);
@@ -92,21 +75,7 @@ public class ResourceManager : MonoBehaviour
             EnemyWaveSpawning.isFirstSave = true;
 
             //If there is nothing to load
-            SaveManager.instance.activeSave.tempGold = 0;
-            SaveManager.instance.activeSave.tempWood = 0;
-            SaveManager.instance.activeSave.tempGem = 0;
-
-            SaveManager.instance.activeSave.tempCannonPositions.Clear();
-            SaveManager.instance.activeSave.tempBlasterPositions.Clear();
-            SaveManager.instance.activeSave.tempBalistaPositions.Clear();
-            SaveManager.instance.activeSave.tempWoodTowerPositions.Clear();
-            SaveManager.instance.activeSave.tempGemTowerPositions.Clear();
-
-            SaveManager.instance.activeSave.tempBlasterCount = 0;
-            SaveManager.instance.activeSave.tempBalistaCount = 0;
-            SaveManager.instance.activeSave.tempCannonCount = 0;
-            SaveManager.instance.activeSave.tempWoodTowerCount = 0;
-            SaveManager.instance.activeSave.tempGemTowerCount = 0;
+            ResetValues();
 
             gold = startingGold;
             SaveManager.instance.activeSave.goldAmount = gold;
@@ -185,4 +154,21 @@ public class ResourceManager : MonoBehaviour
         return gems;
     }
 
+    private void ResetValues() {
+        SaveManager.instance.activeSave.tempGold = 0;
+        SaveManager.instance.activeSave.tempWood = 0;
+        SaveManager.instance.activeSave.tempGem = 0;
+
+        SaveManager.instance.activeSave.tempCannonPositions.Clear();
+        SaveManager.instance.activeSave.tempBlasterPositions.Clear();
+        SaveManager.instance.activeSave.tempBalistaPositions.Clear();
+        SaveManager.instance.activeSave.tempWoodTowerPositions.Clear();
+        SaveManager.instance.activeSave.tempGemTowerPositions.Clear();
+
+        SaveManager.instance.activeSave.tempBlasterCount = 0;
+        SaveManager.instance.activeSave.tempBalistaCount = 0;
+        SaveManager.instance.activeSave.tempCannonCount = 0;
+        SaveManager.instance.activeSave.tempWoodTowerCount = 0;
+        SaveManager.instance.activeSave.tempGemTowerCount = 0;
+    }
 }

@@ -15,12 +15,6 @@ public class ShopToggleImage : MonoBehaviour
         image = GetComponent<Image>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ImageToggle()
     {
         if (image.sprite == chestOpen)
