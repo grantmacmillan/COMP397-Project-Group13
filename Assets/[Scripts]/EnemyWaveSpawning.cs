@@ -7,6 +7,7 @@ using Object = UnityEngine.Object;
 
 public class EnemyWaveSpawning : MonoBehaviour
 {
+   
     public static bool isFirstSave = false;
     public static bool isWaveCompleted = false;
 
@@ -28,7 +29,7 @@ public class EnemyWaveSpawning : MonoBehaviour
     public bool firstRoundStarted = false;
 
     private void Start()
-    {
+    { 
         // skeletons, orcs, vampires
         waves.Add(new Wave(3, 0, 0));
         waves.Add(new Wave(5, 1, 0));
