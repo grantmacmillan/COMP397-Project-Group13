@@ -5,7 +5,7 @@ using System;
 
 public class PointOfIntrestWithEvents : MonoBehaviour
 {
-    public static event Action<PointOfIntrestWithEvents> OnPointOfIntrestEntered;
+    public static event Action<PointOfIntrestWithEvents> OnPointOfIntrestTriggered;
 
     [SerializeField]
     private string _poiName;
@@ -14,9 +14,19 @@ public class PointOfIntrestWithEvents : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (OnPointOfIntrestEntered != null)
+        if (OnPointOfIntrestTriggered != null)
         {
-            OnPointOfIntrestEntered(this);
+            OnPointOfIntrestTriggered(this);
+        }
+    }
+
+    public void TriggerQuest()
+    {
+        Debug.Log("Here");
+        if (OnPointOfIntrestTriggered != null)
+        {
+            Debug.Log("Not Here");
+            OnPointOfIntrestTriggered(this);
         }
     }
 }

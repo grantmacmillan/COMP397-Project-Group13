@@ -9,6 +9,6 @@ public class PointOfIntrest : Subject
 
     private void OnTriggerEnter(Collider other)
     {
-        Notify(poiName, NotificationType.QuestUnlocked);
+        //Notify(poiName, NotificationType.QuestUnlocked);
     }
 }

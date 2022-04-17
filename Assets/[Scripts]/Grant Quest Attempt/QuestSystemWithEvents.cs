@@ -9,15 +9,15 @@ public class QuestSystemWithEvents : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
 
-        PointOfIntrestWithEvents.OnPointOfIntrestEntered += PointOfIntrestWithEvents_OnPointOfIntrestEntered;
+        PointOfIntrestWithEvents.OnPointOfIntrestTriggered += PointOfIntrestWithEvents_OnPointOfIntrestTriggered;
     }
 
     private void OnDestroy()
     {
-        PointOfIntrestWithEvents.OnPointOfIntrestEntered -= PointOfIntrestWithEvents_OnPointOfIntrestEntered;
+        PointOfIntrestWithEvents.OnPointOfIntrestTriggered -= PointOfIntrestWithEvents_OnPointOfIntrestTriggered;
     }
 
-    private void PointOfIntrestWithEvents_OnPointOfIntrestEntered(PointOfIntrestWithEvents poi)
+    private void PointOfIntrestWithEvents_OnPointOfIntrestTriggered(PointOfIntrestWithEvents poi)
     {
         string questKey = "quest-" + poi.PoiName;
 
