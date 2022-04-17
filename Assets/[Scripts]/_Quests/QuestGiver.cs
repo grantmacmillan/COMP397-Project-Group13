@@ -20,11 +20,7 @@ public class QuestGiver : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < parent.transform.childCount; i++)
-        {
-            listOfTiles.Add(parent.transform.GetChild(i).GetComponent<Node>());
-            StartQuest(parent.transform.GetChild(i).GetComponent<Node>());
-        }
+        
     }
 
     public void CloseQuestMenu()
@@ -39,20 +35,5 @@ public class QuestGiver : MonoBehaviour
         rewardImage.sprite = quest.rewardIcon;
         rewardAmount.text = quest.rewardAmount.ToString();
 
-    }
-    public void ShowQuestMenu()
-    { 
-        questMenu.SetActive(true);
-        quest.isActive = true;
-    }
-
-     
-    public void StartQuest(Node node)
-    {
-        Debug.Log("Start quest function");
-        node.quest = quest;
-        quest.isActive = true;
-        resourceManager.quest = quest;
-        
     }
 }

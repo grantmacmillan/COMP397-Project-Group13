@@ -1,26 +1,47 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class Quest 
+public class Quest
 {
-    public bool isActive;
-    
+    public static event Action<Quest> OnComplete;
     public string title;
     public string description;
     public Sprite rewardIcon;
     public int rewardAmount;
-
-    public QuestGoal goal;
+    public RewardType rewardType;
+    public enum RewardType
+    {
+        Gold,
+        Wood,
+        Gem
+    }
 
 
     public void Complete()
     {
-        PointOfIntrestWithEvents.questsCompleted++;
-        isActive = false;
-        Debug.Log(title = " is completed");
+        if (OnComplete != null)
+        {
+            OnComplete(this);
+        }
+
+        if (rewardType == RewardType.Gold)
+        {
+            ResourceManager.gold += rewardAmount;
+        }
+        if (rewardType == RewardType.Wood)
+        {
+            ResourceManager.wood += rewardAmount;
+        }
+        if (rewardType == RewardType.Gem)
+        {
+            ResourceManager.gems += rewardAmount;
+        }
+
+        QuestSystemWithEvents.questCounter++;
     }
 
    /*

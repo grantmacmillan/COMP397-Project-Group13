@@ -115,56 +115,15 @@ public class Node : MonoBehaviour, IDropHandler
 
             Tower tower = BuildManager.instance.GetTurretToBuild();
             if (ResourceManager.Purchase(tower.gold, tower.wood, tower.gem))
-            {//for the quest
-                if (quest.isActive)
-                {
-                    Debug.Log("quest is active in Node.cs");
-                    if (PointOfIntrestWithEvents.questCounter == 1)
-                    {
-                        Debug.Log("quest is Active");
-                        quest.goal.TowerBuild();
-                        if (quest.goal.isReached())
-                        {
-                            //place reward here
-                            ResourceManager.gold += quest.rewardAmount;
-                            SaveManager.instance.activeSave.tempGold += quest.rewardAmount;
-                            quest.Complete();
-                            //amount for next quest
-                            quest.goal.requiredAmount = 3;
-                        }
-                    }
-
-                    if (PointOfIntrestWithEvents.questCounter == 2)
-                    {
-                        Debug.Log("quest is Active");
-                        quest.goal.TowerBuild();
-                        if (quest.goal.isReached())
-                        {
-                            //place reward here
-                            ResourceManager.wood += quest.rewardAmount;
-                            SaveManager.instance.activeSave.tempGold += quest.rewardAmount;
-                            quest.Complete();
-                            //amount for next quest
-                            quest.goal.requiredAmount = 3;
-                        }
-                    }
-
-
-                }
-
-                //end the quest
-                towersBuilt++;
+            {
                 if (OnTowerBuilt != null)
                 {
                     OnTowerBuilt(this);
                 }
-
-
                 FindObjectOfType<Sound_Manager>().Play("Build");
                 GameObject turretToBuild = tower.towerPrefab;
                 turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset,
                     transform.rotation);
-       
                 
                 buildManager.SetTurretToBuild(null);
                 btn.gameObject.SetActive(false);

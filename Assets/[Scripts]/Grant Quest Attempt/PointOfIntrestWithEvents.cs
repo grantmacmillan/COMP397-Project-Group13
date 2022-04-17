@@ -26,7 +26,7 @@ public class PointOfIntrestWithEvents : MonoBehaviour
     public void TriggerQuest()
     {
         
-        if (PointOfIntrestWithEvents.questCounter - PointOfIntrestWithEvents.questsCompleted == 0)
+        if (PointOfIntrestWithEvents.questCounter == PointOfIntrestWithEvents.questsCompleted)
         {
             questCounter++;
             Debug.Log(questCounter);
