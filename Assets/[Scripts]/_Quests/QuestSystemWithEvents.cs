@@ -15,6 +15,7 @@ public class QuestSystemWithEvents : MonoBehaviour
 
     public List<Quest> questList = new List<Quest>();
 
+    public Image progressBar;
     void Start()
     {
         Quest_OnComplete(questList[0]);
@@ -61,6 +62,7 @@ public class QuestSystemWithEvents : MonoBehaviour
     {
         if (questCounter < questList.Count)
         {
+            progressBar.fillAmount = (float)questCounter/ (float)questList.Count;
             title.text = questList[questCounter].title;
             description.text = questList[questCounter].description;
             rewardAmount.text = questList[questCounter].rewardAmount.ToString();
