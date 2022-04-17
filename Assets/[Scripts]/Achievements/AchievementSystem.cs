@@ -20,6 +20,22 @@ public class AchievementSystem : MonoBehaviour
     {
         Enemy.OnEnemyKill += Enemy_OnEnemyKill;
         EnemyWaveSpawning.OnWaveCompleted += EnemyWaveSpawning_OnWaveCompleted;
+        Quest.OnComplete += Quest_OnComplete;
+    }
+
+    private void Quest_OnComplete(Quest quest)
+    {
+        if (quest.rewardType == Quest.RewardType.Gold)
+        {
+            goldEarned += quest.rewardAmount;
+        }
+        foreach (Achievement achievement in achievements.achievements)
+        {
+            if (!achievement.isUnlocked && achievement.type == Achievement.AchievementType.Gold && achievement.amount <= goldEarned)
+            {
+                achievement.Unlock();
+            }
+        }
     }
 
     private void EnemyWaveSpawning_OnWaveCompleted(int gold)
