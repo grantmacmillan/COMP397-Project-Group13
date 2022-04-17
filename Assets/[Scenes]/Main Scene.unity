@@ -39767,6 +39767,7 @@ GameObject:
   - component: {fileID: 1696829121}
   - component: {fileID: 1696829123}
   - component: {fileID: 1696829124}
+  - component: {fileID: 1696829125}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -40009,6 +40010,21 @@ MonoBehaviour:
       type: 3}
     size: 55
     maxSize: 55
+--- !u!114 &1696829125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696829115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1ee3ecc8ecdc74d9ecfc406b282988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievements: {fileID: 11400000, guid: 55b360619c674b64d8a5918ae0dbf1de, type: 2}
+  enemyKillCount: 0
+  goldEarned: 0
 --- !u!1001 &1699600369
 PrefabInstance:
   m_ObjectHideFlags: 0

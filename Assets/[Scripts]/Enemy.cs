@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class Enemy : MonoBehaviour, IPooledObject
         Dead
     }
 
+    public static event Action<Enemy> OnEnemyKill;
     public float movementSpeed = 5f;
     public float rotationSpeed = 5f;
     public float health;
@@ -104,6 +106,10 @@ public class Enemy : MonoBehaviour, IPooledObject
 
     private IEnumerator KillEnemy()
     {
+        if (OnEnemyKill != null)
+        {
+            OnEnemyKill(this);
+        }
         ResourceManager.gold += goldAmount;
         SaveManager.instance.activeSave.tempGold += goldAmount;
         FindObjectOfType<Sound_Manager>().Play("MonsterDeath1");

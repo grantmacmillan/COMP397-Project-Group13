@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 
 public class EnemyWaveSpawning : MonoBehaviour
 {
-   
+    public static event Action<int> OnWaveCompleted;
     public static bool isFirstSave = false;
     public static bool isWaveCompleted = false;
 
@@ -76,6 +76,10 @@ public class EnemyWaveSpawning : MonoBehaviour
             ResourceManager.gold += waveCompletedGold;
             ResourceManager.waveNum++;
             waveNum++;
+            if (OnWaveCompleted != null)
+            {
+                OnWaveCompleted(waveCompletedGold);
+            }
 
             //Transfert temporary date to permanent data
             SaveManager.instance.activeSave.tempGold += waveCompletedGold;
