@@ -10,8 +10,8 @@ public class Quest
     public static event Action<Quest> OnComplete;
     public string title;
     public string description;
-    public Image questIcon;
-    public Image rewardIcon;
+    public Sprite questIcon;
+    public Sprite rewardIcon;
     public int rewardAmount;
     public RewardType rewardType;
     public enum RewardType
@@ -24,6 +24,7 @@ public class Quest
 
     public void Complete()
     {
+        QuestSystemWithEvents.questCounter++;
         if (OnComplete != null)
         {
             OnComplete(this);
@@ -41,8 +42,6 @@ public class Quest
         {
             ResourceManager.gems += rewardAmount;
         }
-
-        QuestSystemWithEvents.questCounter++;
     }
 
    /*

@@ -32,7 +32,7 @@ public class QuestGiver : MonoBehaviour
     { 
         titleText.text = quest.title;
         descriptionText.text = quest.description;
-        rewardImage = quest.rewardIcon;
+        rewardImage.sprite = quest.rewardIcon;
         rewardAmount.text = quest.rewardAmount.ToString();
 
     }

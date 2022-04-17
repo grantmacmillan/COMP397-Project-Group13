@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18383193, g: 0.22909349, b: 0.3038155, a: 1}
+  m_IndirectSpecularColor: {r: 0.18383202, g: 0.22909349, b: 0.30381536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2758,6 +2758,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 95781476}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &95808519 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4819165495445456364, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1457750033972253141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &112579073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4871,51 +4883,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204208906}
   m_CullTransparentMesh: 1
---- !u!1 &216667360
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 216667362}
-  - component: {fileID: 216667361}
-  m_Layer: 0
-  m_Name: QuestTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &216667361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216667360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b156d467c4e20f8458795dc368ac41af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _poiName: test
---- !u!4 &216667362
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216667360}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &230716467
 GameObject:
   m_ObjectHideFlags: 0
@@ -8233,6 +8200,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 366340103}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &375928111 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1457750033348808928, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1457750033972253141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &376172511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8949,7 +8928,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 216667361}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PointOfIntrestWithEvents, Assembly-CSharp
         m_MethodName: TriggerQuest
         m_Mode: 1
@@ -9584,6 +9563,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 433974544}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &441834203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4819165496483314155, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1457750033972253141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &442960830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9774,6 +9765,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 443152672}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &443284165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1457750034474013674, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1457750033972253141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &443338606
 GameObject:
   m_ObjectHideFlags: 0
@@ -15054,7 +15057,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1446941233}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuestGiver, Assembly-CSharp
         m_MethodName: StartQuest
         m_Mode: 1
@@ -15066,7 +15069,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1446941233}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QuestGiver, Assembly-CSharp
         m_MethodName: CloseQuestMenu
         m_Mode: 1
@@ -26037,35 +26040,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7500488018235d44ea89e9b45bf92699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questBox: {fileID: 1446941233}
+  title: {fileID: 1859930723}
+  description: {fileID: 95808519}
+  rewardAmount: {fileID: 443284165}
+  rewardImage: {fileID: 375928111}
+  questImage: {fileID: 441834203}
   questList:
   - title: Open Shop
     description: Click Shop Button In the Bottom Left
-    questIcon: {fileID: 0}
+    questIcon: {fileID: 21300000, guid: d270ab97b4b4cf54d9108575610f2735, type: 3}
     rewardIcon: {fileID: 21300000, guid: c61c4e4f9a61c8343b9438d1182c9b9d, type: 3}
     rewardAmount: 10
     rewardType: 0
   - title: Build Cannon
     description: Drag and Drop a Cannon Tower Onto The Tiles
-    questIcon: {fileID: 0}
+    questIcon: {fileID: 21300000, guid: 9e68215c707fcc943952289af863576f, type: 3}
     rewardIcon: {fileID: 21300000, guid: c61c4e4f9a61c8343b9438d1182c9b9d, type: 3}
     rewardAmount: 6
     rewardType: 0
   - title: Build Sawmill
     description: Drag and Drop a Sawmill Onto The Tiles
-    questIcon: {fileID: 0}
+    questIcon: {fileID: 21300000, guid: f10e803016e5a5447834c24b8b03335e, type: 3}
     rewardIcon: {fileID: 21300000, guid: c61c4e4f9a61c8343b9438d1182c9b9d, type: 3}
     rewardAmount: 10
     rewardType: 0
   - title: Build Second Cannon
     description: Drag and Drop a Cannon Tower Onto The Tiles
-    questIcon: {fileID: 0}
+    questIcon: {fileID: 21300000, guid: 9e68215c707fcc943952289af863576f, type: 3}
     rewardIcon: {fileID: 21300000, guid: c61c4e4f9a61c8343b9438d1182c9b9d, type: 3}
     rewardAmount: 5
     rewardType: 0
   - title: Start Game
     description: Click Start Game Button In The Top Right
-    questIcon: {fileID: 0}
+    questIcon: {fileID: 21300000, guid: 1323750b5a57e864c943712315fa32bb, type: 3}
     rewardIcon: {fileID: 21300000, guid: 8c0467d2c01a6e34d9d8f015ed913e50, type: 3}
     rewardAmount: 5
     rewardType: 1
@@ -26082,7 +26089,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1116045425 stripped
 Transform:
@@ -33884,66 +33891,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1444922873}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1446941232
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1446941234}
-  - component: {fileID: 1446941233}
-  m_Layer: 0
-  m_Name: QuestGiver
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1446941233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446941232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f8dc9442280dfc4599e47d296054316, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questMenu: {fileID: 130801533}
-  quest:
-    title: First Tower
-    description: Buld your first tower and get a reward
-    questIcon: {fileID: 0}
-    rewardIcon: {fileID: 21300000, guid: c61c4e4f9a61c8343b9438d1182c9b9d, type: 3}
-    rewardAmount: 30
-    rewardType: 0
-  resourceManager: {fileID: 1696829120}
-  node: {fileID: 3438026828254324112, guid: 518e444212fa8dc449c46b22b7da76fb, type: 3}
-  listOfTiles: []
-  parent: {fileID: 1645389898}
-  titleText: {fileID: 1867283333}
-  descriptionText: {fileID: 1528416986}
-  rewardImage: {fileID: 1577636770}
-  rewardAmount: {fileID: 585428494}
---- !u!4 &1446941234
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446941232}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1043.6431, y: 690.6283, z: -13.828032}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1449004893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38226,7 +38173,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645389898}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -38376,8 +38323,8 @@ Transform:
   - {fileID: 930722019}
   - {fileID: 190465469}
   - {fileID: 1744162945}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1918310984}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1645389900
 MeshCollider:
@@ -44885,6 +44832,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1859930723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4819165496369072888, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1457750033972253141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1867283328
 GameObject:
   m_ObjectHideFlags: 0
@@ -45793,6 +45752,7 @@ Transform:
   - {fileID: 1113214049}
   - {fileID: 1858977144}
   - {fileID: 1549922545}
+  - {fileID: 1645389899}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48689,7 +48649,7 @@ PrefabInstance:
     - target: {fileID: 7642915804131981617, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7642915804131981617, guid: 76fe006b4ed2a684b89b8d7d9aa9c95d,
         type: 3}
@@ -57342,52 +57302,47 @@ PrefabInstance:
     - target: {fileID: 4819165495445456355, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4819165495445456355, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4819165495445456355, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 282.2805
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4819165495445456355, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -190.21951
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4819165496369072895, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4819165496369072895, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4819165496369072895, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 282.2805
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4819165496369072895, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -59.104504
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4819165496561627400, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_Name
-      value: Toturial
-      objectReference: {fileID: 0}
-    - target: {fileID: 4819165496561627400, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: Tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 4819165496561627401, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
@@ -57427,12 +57382,12 @@ PrefabInstance:
     - target: {fileID: 4819165496561627401, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1000
+      value: 1278.9404
       objectReference: {fileID: 0}
     - target: {fileID: 4819165496561627401, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 194.864
+      value: 409.1795
       objectReference: {fileID: 0}
     - target: {fileID: 4819165496561627401, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
@@ -57472,12 +57427,12 @@ PrefabInstance:
     - target: {fileID: 4819165496561627401, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.000011444092
       objectReference: {fileID: 0}
     - target: {fileID: 4819165496561627401, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -470.8521
+      value: -268
       objectReference: {fileID: 0}
     - target: {fileID: 4819165496561627401, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
         type: 3}
