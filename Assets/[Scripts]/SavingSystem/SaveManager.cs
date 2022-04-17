@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class SaveManager : MonoBehaviour
     public static SaveManager instance;
     public Data activeSave;
     public bool hasLoaded;
+    public AchievementSystem achievementSystem;
 
     //Singleton
     private void Awake()
@@ -22,6 +24,8 @@ public class SaveManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Has Loaded") == 0)
             ResetData();
+        achievementSystem = GameObject.FindGameObjectWithTag("achievement").GetComponent<AchievementSystem>();
+        LoadGlobalData();
     }
 
     //Saving a game state
@@ -61,8 +65,35 @@ public class SaveManager : MonoBehaviour
             hasLoaded = false;
         }
     }
-}
+    //Global Save Data
 
+    void OnApplicationQuit()
+    {
+        string pathName = Application.persistentDataPath;
+        if (!Directory.Exists(pathName + "/global_save_data"))
+        {
+            Directory.CreateDirectory(pathName + "/global_save_data");
+        }
+
+        BinaryFormatter bf = new BinaryFormatter();
+        //FileStream file = File.Create(pathName + "/global_save_data/save.json");
+        var json = JsonUtility.ToJson(achievementSystem);
+        File.WriteAllText(pathName +"/global_save_data/save.json", json);
+        //bf.Serialize(file, json);
+        //file.Close();
+
+    }
+
+    void LoadGlobalData()
+    {
+        string saveFile = Application.persistentDataPath + "/global_save_data/save.json";
+        if (File.Exists(saveFile))
+        {
+            //FileStream file = File.Open(saveFile, FileMode.Open);
+            JsonUtility.FromJsonOverwrite(File.ReadAllText(saveFile), achievementSystem);
+        }
+    }
+}
 [System.Serializable]
 public class Data
 {

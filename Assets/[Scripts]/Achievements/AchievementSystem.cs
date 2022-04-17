@@ -11,6 +11,11 @@ public class AchievementSystem : MonoBehaviour
 
     public int goldEarned;
     // Start is called before the first frame update
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     void Start()
     {
         Enemy.OnEnemyKill += Enemy_OnEnemyKill;

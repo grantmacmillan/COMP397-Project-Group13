@@ -9,6 +9,7 @@ TagManager:
   - cannonball
   - bullet
   - arrow
+  - achievement
   layers:
   - Default
   - TransparentFX
