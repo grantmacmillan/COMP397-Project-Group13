@@ -18,6 +18,7 @@ public class Quest
 
     public void Complete()
     {
+        PointOfIntrestWithEvents.questsCompleted++;
         isActive = false;
         Debug.Log(title = " is completed");
     }

@@ -10,7 +10,10 @@ public class PointOfIntrestWithEvents : MonoBehaviour
     [SerializeField]
     private string _poiName;
 
-    public string PoiName { get { return _poiName; } }
+    public string PoiName { get { return _poiName; } set { PoiName = _poiName; } }
+
+    public static int questCounter = 0;
+    public static int questsCompleted = 0;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,6 +25,12 @@ public class PointOfIntrestWithEvents : MonoBehaviour
 
     public void TriggerQuest()
     {
+        
+        if (PointOfIntrestWithEvents.questCounter - PointOfIntrestWithEvents.questsCompleted == 0)
+        {
+            questCounter++;
+            Debug.Log(questCounter);
+        }
         Debug.Log("Here");
         if (OnPointOfIntrestTriggered != null)
         {
@@ -29,4 +38,6 @@ public class PointOfIntrestWithEvents : MonoBehaviour
             OnPointOfIntrestTriggered(this);
         }
     }
+
+    
 }
