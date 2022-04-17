@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
+using System;
 
 public class Node : MonoBehaviour, IDropHandler
 {
@@ -23,8 +24,12 @@ public class Node : MonoBehaviour, IDropHandler
 
     public GameObject towerRadiusPrefab, radiusObject;
 
+    public static event Action<Node> OnTowerBuilt;
+
+
     //for the quest
     public Quest quest;
+    public int towersBuilt = 0;
     public ResourceManager resourceManager;
     public TextMeshProUGUI goldText, woodText, gemsText, livesText;
 
@@ -113,18 +118,48 @@ public class Node : MonoBehaviour, IDropHandler
             {//for the quest
                 if (quest.isActive)
                 {
-                    Debug.Log("quest is Active");
-                    quest.goal.TowerBuild();
-                    if (quest.goal.isReached())
-                    {  
-                        //place reward here
-                        ResourceManager.gold += quest.rewardAmount;
-                        SaveManager.instance.activeSave.tempGold += quest.rewardAmount;
-                        quest.Complete();
+                    Debug.Log("quest is active in Node.cs");
+                    if (PointOfIntrestWithEvents.questCounter == 1)
+                    {
+                        Debug.Log("quest is Active");
+                        quest.goal.TowerBuild();
+                        if (quest.goal.isReached())
+                        {
+                            //place reward here
+                            ResourceManager.gold += quest.rewardAmount;
+                            SaveManager.instance.activeSave.tempGold += quest.rewardAmount;
+                            quest.Complete();
+                            //amount for next quest
+                            quest.goal.requiredAmount = 3;
+                        }
                     }
+
+                    if (PointOfIntrestWithEvents.questCounter == 2)
+                    {
+                        Debug.Log("quest is Active");
+                        quest.goal.TowerBuild();
+                        if (quest.goal.isReached())
+                        {
+                            //place reward here
+                            ResourceManager.wood += quest.rewardAmount;
+                            SaveManager.instance.activeSave.tempGold += quest.rewardAmount;
+                            quest.Complete();
+                            //amount for next quest
+                            quest.goal.requiredAmount = 3;
+                        }
+                    }
+
+
                 }
-               
+
                 //end the quest
+                towersBuilt++;
+                if (OnTowerBuilt != null)
+                {
+                    OnTowerBuilt(this);
+                }
+
+
                 FindObjectOfType<Sound_Manager>().Play("Build");
                 GameObject turretToBuild = tower.towerPrefab;
                 turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset,

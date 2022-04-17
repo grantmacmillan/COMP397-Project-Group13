@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,12 +11,15 @@ public class QuestSystemWithEvents : MonoBehaviour
 
     private List<string> descriptionList = new List<string>();
     private List<string> rewardList = new List<string>();
+    public List<Quest> questList = new List<Quest>();
 
     void Start()
     {
         PlayerPrefs.DeleteAll();
 
         PointOfIntrestWithEvents.OnPointOfIntrestTriggered += PointOfIntrestWithEvents_OnPointOfIntrestTriggered;
+
+        Node.OnTowerBuilt += Node_OnTowerBuilt;
 
         //add to description box
         descriptionList.Add("Buld your first tower and get a reward");
@@ -25,10 +29,15 @@ public class QuestSystemWithEvents : MonoBehaviour
 
         //add to reward box
         rewardList.Add("10");
-        rewardList.Add("2 value here");
-        rewardList.Add("3 value here");
-        rewardList.Add("4 value here");
+        rewardList.Add("20");
+        rewardList.Add("30");
+        rewardList.Add("40");
 
+    }
+
+    private void Node_OnTowerBuilt(Node obj)
+    {
+        
     }
 
     private void OnDestroy()
@@ -48,7 +57,7 @@ public class QuestSystemWithEvents : MonoBehaviour
             {
                 Debug.Log("In if Statement");
                 questBox.titleText.text = questKey;
-                questBox.descriptionText.text = descriptionList[0];
+                questBox.descriptionText.text = questList[PointOfIntrestWithEvents.questCounter - 1].description;
                 questBox.rewardAmount.text = rewardList[0];
             }
             if (PointOfIntrestWithEvents.questCounter == 2)

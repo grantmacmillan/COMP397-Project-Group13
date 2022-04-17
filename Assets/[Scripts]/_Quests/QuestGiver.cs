@@ -43,6 +43,7 @@ public class QuestGiver : MonoBehaviour
     public void ShowQuestMenu()
     { 
         questMenu.SetActive(true);
+        quest.isActive = true;
     }
 
      

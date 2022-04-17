@@ -12,7 +12,7 @@ public class QuestGoal
 
     public bool isReached()
     {
-        return (currentAmount >= requiredAmount);
+        return (currentAmount == requiredAmount);
     }
 
     public void TowerBuild()

@@ -25962,6 +25962,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questBox: {fileID: 1446941233}
+  questList:
+  - isActive: 0
+    title: 
+    description: 
+    rewardIcon: {fileID: 0}
+    rewardAmount: 0
+    goal:
+      goalType: 2
+      requiredAmount: 0
+      currentAmount: 0
 --- !u!4 &1115577192
 Transform:
   m_ObjectHideFlags: 0
