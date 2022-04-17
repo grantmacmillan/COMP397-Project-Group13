@@ -25963,11 +25963,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questBox: {fileID: 1446941233}
   questList:
-  - title: Build a tower
-    description: dsad
+  - title: Open Shop
+    description: Click Shop Button In the Bottom Left
     rewardIcon: {fileID: 21300000, guid: c61c4e4f9a61c8343b9438d1182c9b9d, type: 3}
     rewardAmount: 10
-    type: 2
+    rewardType: 0
+  - title: Build Cannon
+    description: Drag and Drop a Cannon Tower Onto The Tiles
+    rewardIcon: {fileID: 21300000, guid: c61c4e4f9a61c8343b9438d1182c9b9d, type: 3}
+    rewardAmount: 6
+    rewardType: 0
+  - title: Build Sawmill
+    description: Drag and Drop a Sawmill Onto The Tiles
+    rewardIcon: {fileID: 21300000, guid: c61c4e4f9a61c8343b9438d1182c9b9d, type: 3}
+    rewardAmount: 10
+    rewardType: 0
+  - title: Build Second Cannon
+    description: Drag and Drop a Cannon Tower Onto The Tiles
+    rewardIcon: {fileID: 21300000, guid: c61c4e4f9a61c8343b9438d1182c9b9d, type: 3}
+    rewardAmount: 5
+    rewardType: 0
+  - title: Start Game
+    description: Click Start Game Button In The Top Right
+    rewardIcon: {fileID: 21300000, guid: 8c0467d2c01a6e34d9d8f015ed913e50, type: 3}
+    rewardAmount: 5
+    rewardType: 1
 --- !u!4 &1115577192
 Transform:
   m_ObjectHideFlags: 0
@@ -33749,7 +33769,7 @@ MonoBehaviour:
     description: Buld your first tower and get a reward
     rewardIcon: {fileID: 21300000, guid: c61c4e4f9a61c8343b9438d1182c9b9d, type: 3}
     rewardAmount: 30
-    type: 0
+    rewardType: 0
   resourceManager: {fileID: 1696829120}
   node: {fileID: 3438026828254324112, guid: 518e444212fa8dc449c46b22b7da76fb, type: 3}
   listOfTiles: []
@@ -40021,7 +40041,7 @@ MonoBehaviour:
     description: 
     rewardIcon: {fileID: 0}
     rewardAmount: 0
-    type: 0
+    rewardType: 0
   cannonPrefab: {fileID: 5867045146055092984, guid: d66ed549f7d7d224087a181ce64782b9,
     type: 3}
   balistaPrefab: {fileID: 5867045146055092984, guid: 4fbe262cacb84e443b4a9608d7761980,
