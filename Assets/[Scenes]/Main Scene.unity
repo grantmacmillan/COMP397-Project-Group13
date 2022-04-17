@@ -4565,7 +4565,7 @@ PrefabInstance:
     - target: {fileID: 3699490197095155618, guid: 7d5b8a9d35d2a7043833b81f49c016d1,
         type: 3}
       propertyPath: m_Name
-      value: tile (1)
+      value: tile
       objectReference: {fileID: 0}
     - target: {fileID: 4043363951542918424, guid: 7d5b8a9d35d2a7043833b81f49c016d1,
         type: 3}
@@ -10461,7 +10461,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 376172512}
+    m_TransformParent: {fileID: 1645389899}
     m_Modifications:
     - target: {fileID: 3699490197095155618, guid: 7d5b8a9d35d2a7043833b81f49c016d1,
         type: 3}
@@ -10471,12 +10471,12 @@ PrefabInstance:
     - target: {fileID: 4043363951542918424, guid: 7d5b8a9d35d2a7043833b81f49c016d1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 144
       objectReference: {fileID: 0}
     - target: {fileID: 4043363951542918424, guid: 7d5b8a9d35d2a7043833b81f49c016d1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 14.5
       objectReference: {fileID: 0}
     - target: {fileID: 4043363951542918424, guid: 7d5b8a9d35d2a7043833b81f49c016d1,
         type: 3}
@@ -10486,7 +10486,7 @@ PrefabInstance:
     - target: {fileID: 4043363951542918424, guid: 7d5b8a9d35d2a7043833b81f49c016d1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4043363951542918424, guid: 7d5b8a9d35d2a7043833b81f49c016d1,
         type: 3}
@@ -14790,6 +14790,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1446941233}
         m_TargetAssemblyTypeName: QuestGiver, Assembly-CSharp
         m_MethodName: StartQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1446941233}
+        m_TargetAssemblyTypeName: QuestGiver, Assembly-CSharp
+        m_MethodName: CloseQuestMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33399,6 +33411,8 @@ MonoBehaviour:
       currentAmount: 0
   resourceManager: {fileID: 1696829120}
   node: {fileID: 3438026828254324112, guid: 518e444212fa8dc449c46b22b7da76fb, type: 3}
+  listOfTiles: []
+  parent: {fileID: 1645389898}
   titleText: {fileID: 1867283333}
   descriptionText: {fileID: 1528416986}
   rewardImage: {fileID: 1577636770}
@@ -37606,6 +37620,7 @@ Transform:
   - {fileID: 1544989069}
   - {fileID: 930722019}
   - {fileID: 190465469}
+  - {fileID: 1744162945}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40530,6 +40545,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741599085}
   m_CullTransparentMesh: 1
+--- !u!4 &1744162945 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4043363951542918424, guid: 7d5b8a9d35d2a7043833b81f49c016d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 461209786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1746232438
 GameObject:
   m_ObjectHideFlags: 0
