@@ -17,11 +17,13 @@ public class QuestSystemWithEvents : MonoBehaviour
 
     void Start()
     {
-        UpdateUI(questList[0]);
+        Quest_OnComplete(questList[0]);
         PlayerPrefs.DeleteAll();
 
         Node.OnTowerBuilt += Node_OnTowerBuilt;
-        Quest.OnComplete += UpdateUI;
+        Quest.OnComplete += Quest_OnComplete;
+        Shop.OnOpenShop += Shop_OnOpenShop;
+        EnemyWaveSpawning.OnStartGame += EnemyWaveSpawning_OnStartGame;
 
         //add to description box
         descriptionList.Add("Build your first tower and get a reward");
@@ -37,7 +39,15 @@ public class QuestSystemWithEvents : MonoBehaviour
 
     }
 
-    private void Node_OnTowerBuilt(Node obj)
+    private void EnemyWaveSpawning_OnStartGame()
+    {
+        if (questCounter == 4)
+        {
+            questList[4].Complete();
+        }
+    }
+
+    private void Shop_OnOpenShop()
     {
         if (questCounter == 0)
         {
@@ -45,7 +55,23 @@ public class QuestSystemWithEvents : MonoBehaviour
         }
     }
 
-    private void UpdateUI(Quest quest)
+    private void Node_OnTowerBuilt(Tower tower)
+    {
+        if(questCounter == 1 && tower.towerPrefab.name == "Cannon")
+        {
+            questList[1].Complete();
+        }
+        if (questCounter == 2 && tower.towerPrefab.name == "Wood")
+        {
+            questList[2].Complete();
+        }
+        if (questCounter == 3 && tower.towerPrefab.name == "Cannon")
+        {
+            questList[3].Complete();
+        }
+    }
+
+    private void Quest_OnComplete(Quest quest)
     {
         string questKey = "Quest #" + PointOfIntrestWithEvents.questCounter;
         

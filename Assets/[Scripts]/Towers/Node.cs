@@ -24,7 +24,7 @@ public class Node : MonoBehaviour, IDropHandler
 
     public GameObject towerRadiusPrefab, radiusObject;
 
-    public static event Action<Node> OnTowerBuilt;
+    public static event Action<Tower> OnTowerBuilt;
 
 
     //for the quest
@@ -118,7 +118,7 @@ public class Node : MonoBehaviour, IDropHandler
             {
                 if (OnTowerBuilt != null)
                 {
-                    OnTowerBuilt(this);
+                    OnTowerBuilt(tower);
                 }
                 FindObjectOfType<Sound_Manager>().Play("Build");
                 GameObject turretToBuild = tower.towerPrefab;
