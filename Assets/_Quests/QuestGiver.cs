@@ -9,13 +9,14 @@ public class QuestGiver : MonoBehaviour
 {   [SerializeField] private GameObject questMenu;
     public Quest quest;
     public ResourceManager resourceManager;
-    
+    public Node node;
+
     public Text titleText;
     public Text descriptionText;
     public Image rewardImage;
     public Text rewardAmount;
 
-    
+      
 
     public void OpenQuestMenu()
     { 
@@ -30,9 +31,14 @@ public class QuestGiver : MonoBehaviour
         questMenu.SetActive(true);
     }
 
-        public void CloseQuestMenu()
+     
+    public void StartQuest()
     {
+        Debug.Log("Start quest function");
+        node.quest = quest;
+        quest.isActive = true;
         questMenu.SetActive(false);
-
+        resourceManager.quest = quest;
+        
     }
 }

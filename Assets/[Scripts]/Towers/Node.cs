@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 
@@ -16,10 +17,16 @@ public class Node : MonoBehaviour, IDropHandler
     private Color originalColor;
     private Button btn;
     private Renderer renderer;
+    
 
     private BuildManager buildManager;
 
     public GameObject towerRadiusPrefab, radiusObject;
+
+    //for the quest
+    public Quest quest;
+    public ResourceManager resourceManager;
+    public TextMeshProUGUI goldText, woodText, gemsText, livesText;
 
     void Awake()
     {
@@ -103,11 +110,27 @@ public class Node : MonoBehaviour, IDropHandler
 
             Tower tower = BuildManager.instance.GetTurretToBuild();
             if (ResourceManager.Purchase(tower.gold, tower.wood, tower.gem))
-            {
+            {//for the quest
+                if (quest.isActive)
+                {
+                    Debug.Log("quest is Active");
+                    quest.goal.TowerBuild();
+                    if (quest.goal.isReached())
+                    {  
+                        //place reward here
+                        ResourceManager.gold += quest.rewardAmount;
+                        SaveManager.instance.activeSave.tempGold += quest.rewardAmount;
+                        quest.Complete();
+                    }
+                }
+               
+                //end the quest
                 FindObjectOfType<Sound_Manager>().Play("Build");
                 GameObject turretToBuild = tower.towerPrefab;
                 turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset,
                     transform.rotation);
+       
+                
                 buildManager.SetTurretToBuild(null);
                 btn.gameObject.SetActive(false);
             }

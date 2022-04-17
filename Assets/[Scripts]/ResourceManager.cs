@@ -11,6 +11,7 @@ public class ResourceManager : MonoBehaviour
     public int startingGold = 999, startingWood = 999, startingGems = 999;
     public GameObject pauseMenuUI;
     public static ResourceManager Instance;
+    public Quest quest;
 
     [SerializeField] private GameObject cannonPrefab, balistaPrefab, blasterPrefab, woodPrefab, gemPrefab;
 
