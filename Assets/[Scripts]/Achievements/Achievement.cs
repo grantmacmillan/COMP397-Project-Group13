@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Achievement
 {
     public static event Action<Achievement> OnUnlock;
-    public Image image;
+    public Sprite image;
     public string title;
     public string description;
     public int amount;

@@ -25,7 +25,7 @@ public class AchievementTicker : MonoBehaviour
     {
         title.text = ach.title;
         description.text = ach.description;
-        image = ach.image;
+        image.sprite = ach.image;
         panel.SetActive(true);
         yield return new WaitForSeconds(3);
         panel.SetActive(false);
