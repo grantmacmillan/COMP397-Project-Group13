@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   achievements:
   - image: {fileID: 0}
-    title: Kill 1 Enemy
-    description: test
+    title: Newbie Defender
+    description: Kill One Enemy
     amount: 1
     isUnlocked: 0
     type: 0
