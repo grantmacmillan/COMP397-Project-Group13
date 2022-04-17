@@ -26046,6 +26046,8 @@ MonoBehaviour:
   rewardAmount: {fileID: 443284165}
   rewardImage: {fileID: 375928111}
   questImage: {fileID: 441834203}
+  progressBar: {fileID: 1635025924}
+  tutorial: {fileID: 1475824888}
   questList:
   - title: Open Shop
     description: Click Shop Button In the Bottom Left
@@ -26077,7 +26079,6 @@ MonoBehaviour:
     rewardIcon: {fileID: 21300000, guid: 8c0467d2c01a6e34d9d8f015ed913e50, type: 3}
     rewardAmount: 5
     rewardType: 1
-  progressBar: {fileID: 1635025924}
 --- !u!4 &1115577192
 Transform:
   m_ObjectHideFlags: 0
@@ -34877,6 +34878,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1475299447}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1475824888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4819165496561627400, guid: 46a00771ebcddfe4c8bf5a3d55427d41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1457750033972253141}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1476942585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40338,7 +40345,7 @@ MonoBehaviour:
   gemsText: {fileID: 1812520546}
   waveText: {fileID: 44403173}
   livesText: {fileID: 973922962}
-  startingGold: 25
+  startingGold: 0
   startingWood: 0
   startingGems: 0
   pauseMenuUI: {fileID: 1372213619}
