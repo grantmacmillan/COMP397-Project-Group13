@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Achievement
 {
     public static event Action<Achievement> OnUnlock;
-    public Sprite image;
+    public Image image;
     public string title;
     public string description;
     public int amount;
