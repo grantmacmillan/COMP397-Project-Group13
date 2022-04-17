@@ -10,7 +10,8 @@ public class Quest
     public static event Action<Quest> OnComplete;
     public string title;
     public string description;
-    public Sprite rewardIcon;
+    public Image questIcon;
+    public Image rewardIcon;
     public int rewardAmount;
     public RewardType rewardType;
     public enum RewardType

@@ -8,6 +8,7 @@ using Object = UnityEngine.Object;
 public class EnemyWaveSpawning : MonoBehaviour
 {
     public static event Action<int> OnWaveCompleted;
+    public static event Action OnStartGame;
     public static bool isFirstSave = false;
     public static bool isWaveCompleted = false;
 
@@ -161,6 +162,10 @@ public class EnemyWaveSpawning : MonoBehaviour
 
     public void StartFirstWave()
     {
+        if (OnStartGame != null)
+        {
+            OnStartGame();
+        }
         if (ResourceManager.waveNum <= 1)
         {
             StartCoroutine(SpawnWave(waves[0]));

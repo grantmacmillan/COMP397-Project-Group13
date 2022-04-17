@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,6 +7,7 @@ using UnityEngine.PlayerLoop;
 
 public class Shop : MonoBehaviour
 {
+    public static event Action OnOpenShop;
     private BuildManager buildManager;
     private CanvasGroup canvasGroup;
 
@@ -105,6 +107,10 @@ public class Shop : MonoBehaviour
         }
         else
         {
+            if (OnOpenShop != null)
+            {
+                OnOpenShop();
+            }
             gameObject.SetActive(true);
         }
     }
