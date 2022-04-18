@@ -24,7 +24,10 @@ public class SaveManager : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Has Loaded") == 0)
             ResetData();
-        achievementSystem = GameObject.FindGameObjectWithTag("achievement").GetComponent<AchievementSystem>();
+        if (GameObject.FindGameObjectWithTag("achievement") != null)
+        {
+            achievementSystem = GameObject.FindGameObjectWithTag("achievement").GetComponent<AchievementSystem>();
+        }
         LoadGlobalData();
     }
 
