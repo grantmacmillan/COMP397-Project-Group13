@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   achievements: {fileID: 11400000, guid: 55b360619c674b64d8a5918ae0dbf1de, type: 2}
-  enemyKillCount: 5
+  enemyKillCount: 0
   goldEarned: 0

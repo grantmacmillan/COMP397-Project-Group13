@@ -25,22 +25,26 @@ public class Quest
     public void Complete()
     {
         QuestSystemWithEvents.questCounter++;
-        if (OnComplete != null)
-        {
-            OnComplete(this);
-        }
+        SaveManager.instance.activeSave.currentQuest = QuestSystemWithEvents.questCounter;
 
         if (rewardType == RewardType.Gold)
         {
             ResourceManager.gold += rewardAmount;
+            SaveManager.instance.activeSave.goldAmount += rewardAmount;
         }
         if (rewardType == RewardType.Wood)
         {
             ResourceManager.wood += rewardAmount;
+            SaveManager.instance.activeSave.woodAmount += rewardAmount;
         }
         if (rewardType == RewardType.Gem)
         {
             ResourceManager.gems += rewardAmount;
+            SaveManager.instance.activeSave.gemAmount += rewardAmount;
+        }
+        if (OnComplete != null)
+        {
+            OnComplete(this);
         }
     }
 

@@ -37,7 +37,7 @@ public class SaveManager : MonoBehaviour
         string pathName = Application.persistentDataPath;
 
         var serializer = new XmlSerializer(typeof(Data));
-        var stream = new FileStream(pathName + "\\" + activeSave.saveName + ".txt", FileMode.Create);
+        var stream = new FileStream(pathName + "/global_save_data/" + activeSave.saveName + ".txt", FileMode.Create);
         serializer.Serialize(stream, activeSave);
         stream.Close();
     }
@@ -47,10 +47,10 @@ public class SaveManager : MonoBehaviour
     {
         string pathName = Application.persistentDataPath;
 
-        if (File.Exists(pathName + "\\" + activeSave.saveName + ".txt"))
+        if (File.Exists(pathName + "/global_save_data/" + activeSave.saveName + ".txt"))
         {
             var serializer = new XmlSerializer(typeof(Data));
-            var stream = new FileStream(pathName + "\\" + activeSave.saveName + ".txt", FileMode.Open);
+            var stream = new FileStream(pathName + "/global_save_data/" + activeSave.saveName + ".txt", FileMode.Open);
 
             activeSave = serializer.Deserialize(stream) as Data;
             stream.Close();
@@ -63,14 +63,14 @@ public class SaveManager : MonoBehaviour
     {
         string pathName = Application.persistentDataPath;
 
-        if (File.Exists(pathName + "\\" + activeSave.saveName + ".txt"))
+        if (File.Exists(pathName + "/global_save_data/" + activeSave.saveName + ".txt"))
         {
             hasLoaded = false;
         }
     }
     //Global Save Data
 
-    void OnApplicationQuit()
+    void OnApplicationPause()
     {
         string pathName = Application.persistentDataPath;
         if (!Directory.Exists(pathName + "/global_save_data"))
@@ -108,7 +108,7 @@ public class Data
     public int tempWood;
     public int tempGem;
 
-
+    public int currentQuest;
     //Resource information
     public int woodAmount;
     public int gemAmount;

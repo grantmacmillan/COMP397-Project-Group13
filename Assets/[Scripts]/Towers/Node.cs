@@ -113,13 +113,9 @@ public class Node : MonoBehaviour, IDropHandler
                 return;
             }
 
-            Tower tower = BuildManager.instance.GetTurretToBuild();
+            Tower tower = buildManager.GetTurretToBuild();
             if (ResourceManager.Purchase(tower.gold, tower.wood, tower.gem))
             {
-                if (OnTowerBuilt != null)
-                {
-                    OnTowerBuilt(tower);
-                }
                 FindObjectOfType<Sound_Manager>().Play("Build");
                 GameObject turretToBuild = tower.towerPrefab;
                 turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset,
@@ -127,6 +123,10 @@ public class Node : MonoBehaviour, IDropHandler
                 
                 buildManager.SetTurretToBuild(null);
                 btn.gameObject.SetActive(false);
+                if (OnTowerBuilt != null)
+                {
+                    OnTowerBuilt(tower);
+                }
             }
         }
     }

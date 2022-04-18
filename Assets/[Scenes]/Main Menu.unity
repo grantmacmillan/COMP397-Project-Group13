@@ -2018,11 +2018,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4885773886653331001, guid: d94682786ab2c7b438521f9fbd9ab63c,
-        type: 3}
-      propertyPath: enemyKillCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d94682786ab2c7b438521f9fbd9ab63c, type: 3}
 --- !u!114 &388592790 stripped
@@ -5267,6 +5262,7 @@ MonoBehaviour:
     tempGold: 0
     tempWood: 0
     tempGem: 0
+    currentQuest: 0
     woodAmount: 0
     gemAmount: 0
     goldAmount: 0
