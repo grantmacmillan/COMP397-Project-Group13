@@ -70,21 +70,23 @@ public class SaveManager : MonoBehaviour
     }
     //Global Save Data
 
-    void OnApplicationPause()
+    void OnApplicationPause(bool pauseStatus)
     {
-        string pathName = Application.persistentDataPath;
-        if (!Directory.Exists(pathName + "/global_save_data"))
+        if (pauseStatus)
         {
-            Directory.CreateDirectory(pathName + "/global_save_data");
+            string pathName = Application.persistentDataPath;
+            if (!Directory.Exists(pathName + "/global_save_data"))
+            {
+                Directory.CreateDirectory(pathName + "/global_save_data");
+            }
+
+            BinaryFormatter bf = new BinaryFormatter();
+            //FileStream file = File.Create(pathName + "/global_save_data/save.json");
+            var json = JsonUtility.ToJson(achievementSystem);
+            File.WriteAllText(pathName + "/global_save_data/save.json", json);
+            //bf.Serialize(file, json);
+            //file.Close();
         }
-
-        BinaryFormatter bf = new BinaryFormatter();
-        //FileStream file = File.Create(pathName + "/global_save_data/save.json");
-        var json = JsonUtility.ToJson(achievementSystem);
-        File.WriteAllText(pathName +"/global_save_data/save.json", json);
-        //bf.Serialize(file, json);
-        //file.Close();
-
     }
 
     void LoadGlobalData()
