@@ -17,7 +17,7 @@ MonoBehaviour:
     title: Newbie Defender
     description: Kill One Enemy
     amount: 1
-    isUnlocked: 1
+    isUnlocked: 0
     type: 0
   - image: {fileID: 21300000, guid: 570c5d066b2dc364b8c6fc181a8f7cd6, type: 3}
     title: Adept Defender
@@ -35,13 +35,13 @@ MonoBehaviour:
     title: Small Purse
     description: Collect 50 Gold
     amount: 50
-    isUnlocked: 1
+    isUnlocked: 0
     type: 1
   - image: {fileID: 21300000, guid: ff564adc44f49234d8f347e3929d3d6e, type: 3}
     title: Rich Get Richer
     description: Collect 1000 Gold
     amount: 500
-    isUnlocked: 1
+    isUnlocked: 0
     type: 1
   - image: {fileID: 21300000, guid: 4058588ace5c57e4c9347118bcc39307, type: 3}
     title: Filthy Rich
