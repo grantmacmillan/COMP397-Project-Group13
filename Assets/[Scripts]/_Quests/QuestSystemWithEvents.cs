@@ -11,10 +11,12 @@ public class QuestSystemWithEvents : MonoBehaviour
     // Start is called before the first frame update
     public static int questCounter = 0;
     public TextMeshProUGUI title, description, rewardAmount;
-    public Image rewardImage, questImage;
+    public Image rewardImage, questImage, progressBar;
+    public GameObject tutorial;
 
     public List<Quest> questList = new List<Quest>();
 
+    
     void Start()
     {
         Quest_OnComplete(questList[0]);
@@ -30,6 +32,15 @@ public class QuestSystemWithEvents : MonoBehaviour
         if (questCounter == 4)
         {
             questList[4].Complete();
+            tutorial.SetActive(false);
+        }
+        else
+        {
+            for (int i = questCounter; i < questList.Count; i++)
+            {
+                questList[i].Complete();
+                tutorial.SetActive(false);
+            }
         }
     }
 
@@ -61,6 +72,7 @@ public class QuestSystemWithEvents : MonoBehaviour
     {
         if (questCounter < questList.Count)
         {
+            progressBar.fillAmount = (float)questCounter/ (float)questList.Count;
             title.text = questList[questCounter].title;
             description.text = questList[questCounter].description;
             rewardAmount.text = questList[questCounter].rewardAmount.ToString();
